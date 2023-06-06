@@ -16,7 +16,93 @@
 
 <body>
     <div class="container">
-        
+        <div class="container__img">
+            <img src="Img/miles-morales-spider-man_910x1607_xtrafondos.com.jpg" alt="">
+        </div>
+
+        <div class="container__form">
+            <form action="" id="form">
+                <div class="button">
+                    <button class="button__sign-in">Crear cuenta</button>
+                    <button class="button__sign-in">Iniciar Sesion</button>
+                </div>
+
+                <h1 class="signin">
+                    <span class="signin__sign-in">Crear Cuenta</span>
+                    <span class="signin__or">o</span>
+                    <span class="signin__sign-up">Iniciar Sesion</span>
+                </h1>
+
+                <!-- !formulario para crear una cuenta -->
+                <div class="sign">
+                    <div class="sign__inputs">
+                        <div class="sign__input">
+                            <label for="fullName">
+                                <span class="sign__fullName">Nombre completo</span>
+                                <input type="text" name="" id="fullName" placeholder="Ingrese su nombre completo">
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="email">
+                                <span class="sign__email">Correo electronico</span>
+                                <input type="email" name="" id="email" placeholder="Ingrese un correo electronico">
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="password">
+                                <span class="sign__password">Contraseña</span>
+                                <input type="password" name="" id="password" placeholder="********">
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="repeatPassword">
+                                <span class="sign__password">Repetir contraseña</span>
+                                <input type="password" name="" id="repeatPassword" placeholder="********">
+                            </label>
+                        </div>
+
+                        <div class="sign__input-checkbox">
+                            <label for="terms-services">
+                                <input type="checkbox" name="" id="terms-services">
+                                <span class="sign__terms-of-services">
+                                    Acepto los
+                                    <a href="#" class="sign__terms">terminos</a>
+                                    y
+                                    <a href="#" class="sign__service">servicios</a>
+                                    de la pagina
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" id="sign__buttons-submit">Crear cuenta</button>
+                    </div>
+                </div>
+
+                <!-- !formulario para iniciar sesion -->
+                <div class="login">
+                    <div class="login__inputs">
+                        <div class="login__input">
+                            <label for="sendEmail">
+                                <span class="login__email">Correo electronico</span>
+                                <input type="email" name="" id="sendEmail" placeholder="Ingrese un correo electronico">
+                            </label>
+                        </div>
+
+                        <div class="login__input">
+                            <label for="sendPassword">
+                                <span class="login__password">Contraseña</span>
+                                <input type="password" name="" id="sendPassword" placeholder="Ingrese una contraseña">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="login__button-submit">Iniciar Sesion</button>
+            </form>
+        </div>
     </div>
 </body>
 
