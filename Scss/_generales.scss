@@ -17,12 +17,13 @@ body {
 
 .container {
 	width: 800px;
-	height: 500px;
+	height: 520px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 0.4rem;
 	position: absolute;
+	box-shadow: 0 0 10px blue;
 
 	&__img-sign,
 	&__img-login {

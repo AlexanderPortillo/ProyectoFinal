@@ -34,10 +34,12 @@ export const iniciarSesion = (e) => {
 					window.location.href = '../Html/usuario.html';
 				}
 			} else {
-				console.log('La contrasela es incorrecta');
+				alert('no coinciden las credenciales');
+				// console.log('La contrasela es incorrecta');
 			}
 		} else {
-			console.log('El correo no coincide');
+			// alert('no coinciden las credenciales');
+			console.log('El usuario no coincide');
 		}
 	});
 };

@@ -7,6 +7,21 @@
 		display: none;
 	}
 
+	&--error {
+		border-bottom: 0.1rem solid red !important;
+	}
+
+	&__user--error,
+	&__fullName--error,
+	&__email--error,
+	&__password--error,
+	&__repeatPassword--error,
+	&__checkbox--error,
+	&__user--reload,
+	&__email--reload {
+		color: red !important;
+	}
+
 	label {
 		display: flex;
 		flex-direction: column;
@@ -22,6 +37,7 @@
 		span {
 			font-size: 1rem;
 			color: #abb2bb;
+			cursor: pointer;
 		}
 
 		input {
@@ -32,6 +48,12 @@
 			border: none;
 			border-bottom: 0.1rem solid #3e4e61;
 			color: #647080;
+			transition: border-bottom 1s, color 1s;
+
+			&:focus {
+				border-bottom: 0.1rem solid #4c7fbd;
+				color: #71a2e2;
+			}
 		}
 	}
 
@@ -48,6 +70,7 @@
 
 	&__terms-of-services {
 		font-size: 0.9rem;
+		cursor: pointer;
 	}
 
 	&__terms,

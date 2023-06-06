@@ -1,3 +1,4 @@
+let tiempo = 2000;
 const formulario = document.forms['form'];
 
 export const crearCuenta = (e) => {
@@ -18,32 +19,80 @@ export const crearCuenta = (e) => {
 	};
 
 	if (!expresionRegularUsuario.test(datos.nombreUsuario)) {
-		console.log('El usuario es invalido');
+		const errorNombreUsuario = document.querySelector('.sign__user--error');
+
+		errorNombreUsuario.classList.remove('sign--disabled');
+		formulario.user.classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario.user.classList.remove('sign--error');
+			errorNombreUsuario.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
 	if (!expresionRegularNombre.test(datos.nombreCompleto)) {
-		console.log('El nombre es invalido');
+		const errorNombre = document.querySelector('.sign__fullName--error');
+
+		errorNombre.classList.remove('sign--disabled');
+		formulario.fullName.classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario.fullName.classList.remove('sign--error');
+			errorNombre.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
 	if (!expresionRegularCorreo.test(datos.correoElectronico)) {
-		console.log('El correo es invalido');
+		const errorEmail = document.querySelector('.sign__email--error');
+
+		errorEmail.classList.remove('sign--disabled');
+		formulario.email.classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario.email.classList.remove('sign--error');
+			errorEmail.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
 	if (!expresionRegularContraseña.test(datos.contraseña)) {
-		console.log('La contraseña es invalida');
+		const errorContraseña = document.querySelector('.sign__password--error');
+
+		errorContraseña.classList.remove('sign--disabled');
+		formulario.password.classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario.password.classList.remove('sign--error');
+			errorContraseña.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
 	if (datos.contraseña !== datos.confirmarContraseña) {
-		console.log('Las contraseñas no coinciden');
+		const errorConfirmar = document.querySelector('.sign__repeatPassword--error');
+
+		errorConfirmar.classList.remove('sign--disabled');
+		formulario.repeatPassword.classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario.repeatPassword.classList.remove('sign--error');
+			errorConfirmar.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
 	if (!datos.aceptarCondiciones) {
-		console.log('Acepta los terminos y condiciones');
+		const errorTerminos = document.querySelector('.sign__checkbox--error');
+
+		errorTerminos.classList.remove('sign--disabled');
+		formulario['terms-services'].classList.add('sign--error');
+
+		setTimeout(function () {
+			formulario['terms-services'].classList.remove('sign--error');
+			errorTerminos.classList.add('sign--disabled');
+		}, tiempo);
 		return;
 	}
 
@@ -62,11 +111,24 @@ export const crearCuenta = (e) => {
 	} else {
 		elementos.forEach((element) => {
 			if (element.nombreUsuario === datos.nombreUsuario) {
-				alert('El nombre de usuario ya se encuentra registrado');
+				const usuarioEnUso = document.querySelector('.sign__user--reload');
+
+				usuarioEnUso.classList.remove('sign--disabled');
+
+				setTimeout(function () {
+					usuarioEnUso.classList.add('sign--disabled');
+				}, tiempo);
+
 				formulario.user.value = '';
 			} else {
 				if (element.correoElectronico === datos.correoElectronico) {
-					alert('El correo electronico ya se encuentra registrado');
+					const correoEnUso = document.querySelector('.sign__email--reload');
+
+					correoEnUso.classList.remove('sign--disabled');
+
+					setTimeout(function () {
+						correoEnUso.classList.add('sign--disabled');
+					}, tiempo);
 					formulario.email.value = '';
 				} else {
 					formulario.user.value = '';
@@ -78,6 +140,7 @@ export const crearCuenta = (e) => {
 
 					elementos.push(datos);
 					localStorage.setItem('usuario', JSON.stringify(elementos));
+					alert('Se registro exitosamente');
 				}
 			}
 		});

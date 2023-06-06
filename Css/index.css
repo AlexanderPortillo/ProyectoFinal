@@ -17,12 +17,13 @@ body {
 
 .container {
   width: 800px;
-  height: 500px;
+  height: 520px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 0.4rem;
   position: absolute;
+  box-shadow: 0 0 10px blue;
 }
 .container__img-sign, .container__img-login {
   width: 50%;
@@ -106,6 +107,12 @@ body {
 .sign--disabled {
   display: none;
 }
+.sign--error {
+  border-bottom: 0.1rem solid red !important;
+}
+.sign__user--error, .sign__fullName--error, .sign__email--error, .sign__password--error, .sign__repeatPassword--error, .sign__checkbox--error, .sign__user--reload, .sign__email--reload {
+  color: red !important;
+}
 .sign label {
   display: flex;
   flex-direction: column;
@@ -118,6 +125,7 @@ body {
 .sign__input span {
   font-size: 1rem;
   color: #abb2bb;
+  cursor: pointer;
 }
 .sign__input input {
   padding: 0.4rem 0;
@@ -127,6 +135,11 @@ body {
   border: none;
   border-bottom: 0.1rem solid #3e4e61;
   color: #647080;
+  transition: border-bottom 1s, color 1s;
+}
+.sign__input input:focus {
+  border-bottom: 0.1rem solid #4c7fbd;
+  color: #71a2e2;
 }
 .sign__input-checkbox {
   margin-top: 0.6rem;
@@ -139,6 +152,7 @@ body {
 }
 .sign__terms-of-services {
   font-size: 0.9rem;
+  cursor: pointer;
 }
 .sign__terms, .sign__service {
   color: #aab0b8;
