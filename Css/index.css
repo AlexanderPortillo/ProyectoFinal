@@ -1,3 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e9828f;
+}
+
+.container {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0.4rem;
+  box-shadow: 10px 10px 30px #623242, -10px -10px;
+  position: absolute;
+}
+.container__img {
+  width: 50%;
+  height: 100%;
+  background-color: #6de0ca;
+  border-radius: 0.4rem 0 0 0 0.4rem;
+}
+.container__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container__form {
+  width: 50%;
+  height: 100%;
+  background-color: #364560;
+  padding: 0 1.5rem;
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 1rem 0;
+}
+.button__sign-in, .button__sign-up {
+  padding: 0.3rem;
+  background-color: #4c5d72;
+  border: none;
+  color: #7f8c9a;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button__sign-in {
+  border-radius: 1rem 0 0 1rem;
+}
+.button__sign-up {
+  border-radius: 0 1rem 1rem 0;
+}
+.button__sign-up {
+  border-radius: 0 1rem 1rem 0;
+}
 
 /*# sourceMappingURL=index.css.map */
