@@ -32,7 +32,7 @@ export const enviarDatos = (e) => {
 	}
 
 	if (!expresionRegularContraseña.test(datos.contraseña)) {
-		console.log('La contraseña es invalidad');
+		console.log('La contraseña es invalida');
 		return;
 	}
 
