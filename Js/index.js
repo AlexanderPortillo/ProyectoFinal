@@ -1,8 +1,8 @@
-import { enviarDatos } from './_crearCuenta.js';
+import { crearCuenta } from './_crearCuenta.js';
 import { iniciarSesion } from './_IniciarSesion.js';
 
-const crearCuenta = document.getElementById('sign__buttons-submit');
-const iniciarSesion = document.getElementById('login__buttons-submit');
+const CrearCuenta = document.getElementById('sign__buttons-submit');
+const IniciarSesion = document.getElementById('login__button-submit');
 
-crearCuenta.addEventListener('click', enviarDatos);
-iniciarSesion.addEventListener('click', iniciarSesion);
+CrearCuenta.addEventListener('click', crearCuenta);
+IniciarSesion.addEventListener('click', iniciarSesion);

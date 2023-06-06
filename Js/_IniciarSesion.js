@@ -4,11 +4,12 @@ export const iniciarSesion = (e) => {
 	e.preventDefault();
 
 	const datos = {
-		nombreUsuario: formulario.user.value,
-		contraseña: formulario.password.value,
+		nombreUsuario: formulario.sendUser.value,
+		contraseña: formulario.sendPassword.value,
 	};
 
-    const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
+	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
+
 	elementos.forEach((element) => {
 		if (element.nombreUsuario === datos.nombreUsuario) {
 			if (element.contraseña === datos.contraseña) {

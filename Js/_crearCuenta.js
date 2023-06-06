@@ -1,6 +1,6 @@
 const formulario = document.forms['form'];
 
-export const enviarDatos = (e) => {
+export const crearCuenta = (e) => {
 	e.preventDefault();
 
 	const expresionRegularUsuario = /^(?! )(?!.* $)(?!.*  )[\w ]+$/;
@@ -53,4 +53,3 @@ export const enviarDatos = (e) => {
 
 	localStorage.setItem('usuario', JSON.stringify(elementos));
 };
-
