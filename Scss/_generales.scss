@@ -9,7 +9,10 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #e9828f;
+	background-image: url('../Svg/wave-haikei.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container {
@@ -19,20 +22,30 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 0.4rem;
-	box-shadow: 10px 10px 30px #623242, -10px -10px;
 	position: absolute;
 
-	&__img {
+	&__img-sign,
+	&__img-login {
 		width: 50%;
 		height: 100%;
-		background-color: #6de0ca;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		border-radius: 0.4rem 0 0 0 0.4rem;
+	}
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
+	&__img-sign--active {
+		background-image: url('../Img/miles-morales-spider-man_910x1607_xtrafondos.com.jpg');
+		border-radius: 0.4rem 0 0 0.4rem;
+	}
+
+	&__img-login--active {
+		background-image: url('../Img/spider-man-raimi-verse-traje-dorado_1630x2880_xtrafondos.com.jpg');
+		border-radius: 0.4rem 0 0 0.4rem;
+	}
+
+	&__disabled {
+		display: none;
 	}
 
 	&__form {
@@ -49,7 +62,7 @@ body {
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: row;
-	padding: 1rem 0;
+	padding: 0.6rem 0 0 0;
 
 	&__sign-in,
 	&__sign-up {
@@ -70,7 +83,36 @@ body {
 		border-radius: 0 1rem 1rem 0;
 	}
 
+	&__sign-in--active {
+		background-color: #68dac7;
+		color: #d0f1ed;
+		box-shadow: 0 0 10px black;
+	}
+
+	&__sign-up--active {
+		background-color: #68dac7;
+		color: #d0f1ed;
+		box-shadow: 0 0 10px black;
+	}
+}
+
+.signin {
+	color: #5d6c7d;
+	font-weight: 100;
+	padding: 0.2rem 0 0.8rem 0;
+
+	&__sign-in,
 	&__sign-up {
-		border-radius: 0 1rem 1rem 0;
+		font-size: 1.5rem;
+	}
+
+	&__or {
+		font-size: 1.2rem;
+	}
+
+	&__sign-in--active,
+	&__sign-up--active {
+		color: #ced2d8;
+		border-bottom: 4px solid #1f807d;
 	}
 }

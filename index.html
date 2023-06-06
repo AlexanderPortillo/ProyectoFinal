@@ -16,19 +16,21 @@
 
 <body>
     <div class="container">
-        <div class="container__img">
-            <!-- <img src="Img/miles-morales-spider-man_910x1607_xtrafondos.com.jpg" alt=""> -->
+        <div class="container__img-sign container__img-sign--active">
+        </div>
+
+        <div class="container__img-login container__img-login--active container__disabled">
         </div>
 
         <div class="container__form">
             <form action="" id="form">
                 <div class="button">
-                    <button class="button__sign-in">Crear cuenta</button>
-                    <button class="button__sign-in">Iniciar Sesion</button>
+                    <button class="button__sign-in button__sign-in--active" data-accion="sign">Crear cuenta</button>
+                    <button class="button__sign-up" data-accion="login">Iniciar Sesion</button>
                 </div>
 
                 <h1 class="signin">
-                    <span class="signin__sign-in">Crear Cuenta</span>
+                    <span class="signin__sign-in signin__sign-in--active">Crear Cuenta</span>
                     <span class="signin__or">o</span>
                     <span class="signin__sign-up">Iniciar Sesion</span>
                 </h1>
@@ -84,12 +86,13 @@
                             </label>
                         </div>
 
-                        <button type="submit" id="sign__buttons-submit">Crear cuenta</button>
+                        <button type="submit" class="sign__button-submit-style" id="sign__button-submit">Crear
+                            cuenta</button>
                     </div>
                 </div>
 
                 <!-- !formulario para iniciar sesion -->
-                <div class="login">
+                <div class="login login--disabled">
                     <div class="login__inputs">
                         <div class="login__input">
                             <label for="sendUser">
@@ -104,10 +107,10 @@
                                 <input type="password" name="" id="sendPassword" placeholder="Ingrese una contraseña">
                             </label>
                         </div>
+                        <button type="submit" class="login__button-submit-style" id="login__button-submit">Iniciar
+                            Sesion</button>
                     </div>
                 </div>
-
-                <button type="submit" id="login__button-submit">Iniciar Sesion</button>
             </form>
         </div>
     </div>

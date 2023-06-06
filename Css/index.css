@@ -9,7 +9,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e9828f;
+  background-image: url("../Svg/wave-haikei.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -19,19 +22,26 @@ body {
   justify-content: space-around;
   align-items: center;
   border-radius: 0.4rem;
-  box-shadow: 10px 10px 30px #623242, -10px -10px;
   position: absolute;
 }
-.container__img {
+.container__img-sign, .container__img-login {
   width: 50%;
   height: 100%;
-  background-color: #6de0ca;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 0.4rem 0 0 0 0.4rem;
 }
-.container__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.container__img-sign--active {
+  background-image: url("../Img/miles-morales-spider-man_910x1607_xtrafondos.com.jpg");
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.container__img-login--active {
+  background-image: url("../Img/spider-man-raimi-verse-traje-dorado_1630x2880_xtrafondos.com.jpg");
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.container__disabled {
+  display: none;
 }
 .container__form {
   width: 50%;
@@ -46,7 +56,7 @@ body {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  padding: 1rem 0;
+  padding: 0.6rem 0 0 0;
 }
 .button__sign-in, .button__sign-up {
   padding: 0.3rem;
@@ -63,8 +73,133 @@ body {
 .button__sign-up {
   border-radius: 0 1rem 1rem 0;
 }
-.button__sign-up {
-  border-radius: 0 1rem 1rem 0;
+.button__sign-in--active {
+  background-color: #68dac7;
+  color: #d0f1ed;
+  box-shadow: 0 0 10px black;
+}
+.button__sign-up--active {
+  background-color: #68dac7;
+  color: #d0f1ed;
+  box-shadow: 0 0 10px black;
+}
+
+.signin {
+  color: #5d6c7d;
+  font-weight: 100;
+  padding: 0.2rem 0 0.8rem 0;
+}
+.signin__sign-in, .signin__sign-up {
+  font-size: 1.5rem;
+}
+.signin__or {
+  font-size: 1.2rem;
+}
+.signin__sign-in--active, .signin__sign-up--active {
+  color: #ced2d8;
+  border-bottom: 4px solid #1f807d;
+}
+
+.sign {
+  height: 300px;
+}
+.sign--disabled {
+  display: none;
+}
+.sign label {
+  display: flex;
+  flex-direction: column;
+}
+.sign__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.sign__input span {
+  font-size: 1rem;
+  color: #abb2bb;
+}
+.sign__input input {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.1rem solid #3e4e61;
+  color: #647080;
+}
+.sign__input-checkbox {
+  margin-top: 0.6rem;
+}
+.sign__input-checkbox label {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+.sign__terms-of-services {
+  font-size: 0.9rem;
+}
+.sign__terms, .sign__service {
+  color: #aab0b8;
+  text-decoration: none;
+  border-bottom: 1px solid #217773;
+}
+.sign__button-submit-style {
+  font-size: 1rem;
+  padding: 0.4rem;
+  font-weight: bold;
+  color: #f6f6f7;
+  text-shadow: 0 0 10px #f6f6f7;
+  background-color: #6de0ca;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: box-shadow 1s;
+}
+.sign__button-submit-style:hover {
+  box-shadow: 0 0 20px #1d2231;
+}
+
+.login--disabled {
+  display: none;
+}
+.login label {
+  display: flex;
+  flex-direction: column;
+}
+.login__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login__input span {
+  font-size: 1rem;
+  color: #abb2bb;
+}
+.login__input input {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.1rem solid #3e4e61;
+  color: #647080;
+}
+.login__button-submit-style {
+  font-size: 1rem;
+  padding: 0.4rem;
+  font-weight: bold;
+  color: #f6f6f7;
+  text-shadow: 0 0 10px #f6f6f7;
+  background-color: #6de0ca;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: box-shadow 1s;
+}
+.login__button-submit-style:hover {
+  box-shadow: 0 0 20px #1d2231;
 }
 
 /*# sourceMappingURL=index.css.map */

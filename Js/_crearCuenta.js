@@ -14,6 +14,7 @@ export const crearCuenta = (e) => {
 		correoElectronico: formulario.email.value,
 		contraseña: formulario.password.value,
 		confirmarContraseña: formulario.repeatPassword.value,
+		aceptarCondiciones: formulario['terms-services'].checked,
 	};
 
 	if (!expresionRegularUsuario.test(datos.nombreUsuario)) {
@@ -41,15 +42,44 @@ export const crearCuenta = (e) => {
 		return;
 	}
 
+	if (!datos.aceptarCondiciones) {
+		console.log('Acepta los terminos y condiciones');
+		return;
+	}
+
 	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
 
-	formulario.user.value = '';
-	formulario.fullName.value = '';
-	formulario.email.value = '';
-	formulario.password.value = '';
-	formulario.repeatPassword.value = '';
+	if (localStorage.getItem('usuario') === null) {
+		formulario.user.value = '';
+		formulario.fullName.value = '';
+		formulario.email.value = '';
+		formulario.password.value = '';
+		formulario.repeatPassword.value = '';
+		formulario['terms-services'].checked = false;
 
-	elementos.push(datos);
+		elementos.push(datos);
+		localStorage.setItem('usuario', JSON.stringify(elementos));
+	} else {
+		elementos.forEach((element) => {
+			if (element.nombreUsuario === datos.nombreUsuario) {
+				alert('El nombre de usuario ya se encuentra registrado');
+				formulario.user.value = '';
+			} else {
+				if (element.correoElectronico === datos.correoElectronico) {
+					alert('El correo electronico ya se encuentra registrado');
+					formulario.email.value = '';
+				} else {
+					formulario.user.value = '';
+					formulario.fullName.value = '';
+					formulario.email.value = '';
+					formulario.password.value = '';
+					formulario.repeatPassword.value = '';
+					formulario['terms-services'].checked = false;
 
-	localStorage.setItem('usuario', JSON.stringify(elementos));
+					elementos.push(datos);
+					localStorage.setItem('usuario', JSON.stringify(elementos));
+				}
+			}
+		});
+	}
 };

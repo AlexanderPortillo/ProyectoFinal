@@ -29,9 +29,9 @@ export const iniciarSesion = (e) => {
 				}
 
 				if (buscarPalabra(cadena, palabra)) {
-					window.location.href = 'moderador.html';
+					window.location.href = '../Html/moderador.html';
 				} else {
-					window.location.href = 'usuario.html';
+					window.location.href = '../Html/usuario.html';
 				}
 			} else {
 				console.log('La contrasela es incorrecta');

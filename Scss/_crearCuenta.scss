@@ -1,0 +1,63 @@
+@use 'mixins';
+
+.sign {
+	height: 300px;
+
+	&--disabled {
+		display: none;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+	}
+
+	&__input {
+		span {
+			font-size: 1rem;
+			color: #abb2bb;
+		}
+
+		input {
+			padding: 0.4rem 0;
+			font-size: 1rem;
+			outline: none;
+			background-color: transparent;
+			border: none;
+			border-bottom: 0.1rem solid #3e4e61;
+			color: #647080;
+		}
+	}
+
+	&__input-checkbox {
+		margin-top: 0.6rem;
+
+		label {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			gap: 0.7rem;
+		}
+	}
+
+	&__terms-of-services {
+		font-size: 0.9rem;
+	}
+
+	&__terms,
+	&__service {
+		color: #aab0b8;
+		text-decoration: none;
+		border-bottom: 1px solid #217773;
+	}
+
+	&__button-submit-style {
+		@include mixins.btn-form();
+	}
+}

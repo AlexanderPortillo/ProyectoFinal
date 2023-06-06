@@ -1,0 +1,16 @@
+@mixin btn-form() {
+	font-size: 1rem;
+	padding: 0.4rem;
+	font-weight: bold;
+	color: #f6f6f7;
+	text-shadow: 0 0 10px #f6f6f7;
+	background-color: #6de0ca;
+	border: none;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	transition: box-shadow 1s;
+
+	&:hover {
+		box-shadow: 0 0 20px #1d2231;
+	}
+}
