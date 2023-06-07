@@ -12,6 +12,12 @@
     <!-- ! JavaScript -->
     <script src="Js/index.js" type="module" defer></script>
     <title>Pagina de inicio</title>
+    <style>
+        .warning {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,9 +77,11 @@
                         <div class="sign__input">
                             <label for="password">
                                 <span class="sign__password">Contraseña</span>
+
                                 <input type="password" name="" id="password" placeholder="********">
-                                <span class="sign__password--error sign--disabled">Por favor ingrese una contraseña
-                                    valida</span>
+                                <span class="sign__password--error sign--disabled">La contraseña debe tener al menos 8
+                                    caracteres</span>
+                                <span id="passwordWarning" class="warning"></span> <!-- Advertencia de contraseña -->
                             </label>
                         </div>
 
@@ -83,6 +91,7 @@
                                 <input type="password" name="" id="repeatPassword" placeholder="********">
                                 <span class="sign__repeatPassword--error sign--disabled">Por favor ingrese la misma
                                     contraseña</span>
+
                             </label>
                         </div>
 

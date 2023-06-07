@@ -41,5 +41,6 @@ export const iniciarSesion = (e) => {
 			// alert('no coinciden las credenciales');
 			console.log('El usuario no coincide');
 		}
+
 	});
 };
