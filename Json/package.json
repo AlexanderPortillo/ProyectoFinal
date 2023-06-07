@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"sass": "sass -w ../Scss/index.scss ../Css/index.css"
+		"index": "sass -w ../Scss/index.scss ../Css/index.css",
+		"moderador": "sass -w ../Scss/moderador.scss ../Css/moderador.css"
 	},
 	"keywords": [],
 	"author": "",

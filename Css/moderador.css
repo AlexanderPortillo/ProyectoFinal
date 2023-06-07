@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  background-color: red;
+}
+.navbar__ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.navbar__item {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+/*# sourceMappingURL=moderador.css.map */
