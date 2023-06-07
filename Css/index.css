@@ -23,7 +23,7 @@ body {
   align-items: center;
   border-radius: 0.4rem;
   position: absolute;
-  box-shadow: 0 0 10px blue;
+  box-shadow: 0 0 200px rgb(11, 11, 11);
 }
 .container__img-sign, .container__img-login {
   width: 50%;
@@ -34,11 +34,11 @@ body {
   border-radius: 0.4rem 0 0 0 0.4rem;
 }
 .container__img-sign--active {
-  background-image: url("../Img/miles-morales-spider-man_910x1607_xtrafondos.com.jpg");
+  background-image: url("../Img/registro.jpg");
   border-radius: 0.4rem 0 0 0.4rem;
 }
 .container__img-login--active {
-  background-image: url("../Img/spider-man-raimi-verse-traje-dorado_1630x2880_xtrafondos.com.jpg");
+  background-image: url("../Img/iniciosesion.jpg");
   border-radius: 0.4rem 0 0 0.4rem;
 }
 .container__disabled {

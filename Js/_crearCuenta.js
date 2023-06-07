@@ -4,8 +4,8 @@ const formulario = document.forms['form'];
 export const crearCuenta = (e) => {
 	e.preventDefault();
 
-	const expresionRegularUsuario = /^(?! )(?!.* $)(?!.*  )[\w ]+$/;
-	const expresionRegularNombre = /^(?! )(?!.* $)(?!.*  )[\w ]+$/;
+	const expresionRegularUsuario = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
+	const expresionRegularNombre = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 	const expresionRegularContraseña = /^(?!.*\s)(?=.*[+*])[\S]{8,}$/;
 
