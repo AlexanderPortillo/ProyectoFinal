@@ -108,6 +108,7 @@ export const crearCuenta = (e) => {
 
 		elementos.push(datos);
 		localStorage.setItem('usuario', JSON.stringify(elementos));
+		alert('Se registro exitosamente');
 	} else {
 		elementos.forEach((element) => {
 			if (element.nombreUsuario === datos.nombreUsuario) {

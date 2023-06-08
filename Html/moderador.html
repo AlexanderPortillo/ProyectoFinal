@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ! Icon -->
-    <!-- <link rel="icon" href=""> -->
-    <!-- ! Font Awesome -->
-    <!-- <script src="https://kit.fontawesome.com/627b2b4bd2.js" defer crossorigin="anonymous"></script> -->
+    <link rel="icon" href="">
     <!-- ! List style -->
     <link rel="stylesheet" href="../Css/moderador.css">
     <!-- ! JavaScript -->
@@ -18,25 +16,26 @@
 
 <body>
     <!-- !pagina de inicio -->
-    <div class="home"></div>
+    <div class="home">
+    </div>
 
     <!-- !pagina para crear nuevos usuarios y post -->
     <div class="user-post">
-        <!-- !formulario para crear un post -->
-        <form action="" id="post-user">
+        <form action="" id="form">
+            <!-- !formulario para crear un post -->
             <div class="post">
                 <div class="post__inputs">
                     <div class="post__input">
                         <label for="url">
-                            <span class="post__url">Ingrese una URL</span>
+                            <span class="post__url">Portada</span>
                             <input type="url" name="" id="url" placeholder="Ingrese la url de la imagen">
-                            <span class="post__url-error post--disabled">URL invalido</span>
+                            <span class="post__url--error post--disabled">URL invalido</span>
                         </label>
                     </div>
 
                     <div class="post__input">
                         <label for="title">
-                            <span class="post__title">Ingrese el nombre de la pelicula</span>
+                            <span class="post__title">Nombre de la pelicula</span>
                             <input type="text" name="" id="title" placeholder="Ingrese el nombre de la pelicula">
                             <span class="post__title--error post--disabled">Nombre invalido</span>
                         </label>
@@ -44,81 +43,116 @@
 
                     <div class="post__input">
                         <label for="description">
-                            <span class="post__description">Ingrese una descripcion de la pelicula</span>
+                            <span class="post__description">Descripcion de la pelicula</span>
                             <textarea name="" id="description" cols="20" rows="4"></textarea>
-                            <span class="post__description post__description--error post--disabled">Error descripcion no
+                            <span class="post__description--error post--disabled">Error descripcion no
                                 validad</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="post__button-style" id="post__button">Crear Post</button>
+                    <button type="submit" class="post__button-style" id="post__button">
+                        <span>Crear nueva publicacion</span>
+                    </button>
                 </div>
             </div>
 
             <!-- !formulario para crear usuarios -->
-            <div class="user">
-                <div class="user__inputs">
-                    <div class="user__input">
-                        <label for="nameUser">
-                            <span class="user__nameUser">Ingrese un nombre de usuario</span>
-                            <input type="text" name="" id="nameUser">
+            <div class="sign">
+                <div class="sign__inputs">
+                    <div class="sign__input">
+                        <label for="user">
+                            <span class="sign__user">Nombre de usuario</span>
+                            <input type="text" name="" id="user" placeholder="Ingrese su nombre de usuario">
+                            <span class="sign__user--error sign--disabled">Por favor ingrese un nombre de usuario
+                                valido</span>
+                            <span class="sign__user--reload sign--disabled">Este nombre de usuario ya esta en
+                                uso</span>
                         </label>
                     </div>
 
-                    <div class="user__input">
-                        <label for="fullname">
-                            <span class="user__fullname">Ingrese su nombre completo</span>
-                            <input type="text" name="" id="fullname">
+                    <div class="sign__input">
+                        <label for="fullName">
+                            <span class="sign__fullName">Nombre completo</span>
+                            <input type="text" name="" id="fullName" placeholder="Ingrese su nombre completo">
+                            <span class="sign__fullName--error sign--disabled">Por favor ingrese un nombre
+                                valido</span>
                         </label>
                     </div>
 
-                    <div class="user__input">
+                    <div class="sign__input">
                         <label for="email">
-                            <span class="user__email">Ingrese un correo electronico</span>
-                            <input type="email" name="" id="email">
+                            <span class="sign__email">Correo electronico</span>
+                            <input type="email" name="" id="email" placeholder="Ingrese un correo electronico">
+                            <span class="sign__email--error sign--disabled">Por favor ingrese un email valido</span>
+                            <span class="sign__email--reload sign--disabled">Este correo electronico ya esta en
+                                uso</span>
                         </label>
                     </div>
 
-                    <div class="user__input">
+                    <div class="sign__input">
                         <label for="password">
-                            <span class="user__password">Ingrese una contraseña</span>
-                            <input type="password" name="" id="password">
+                            <span class="sign__password">Contraseña</span>
+                            <input type="password" name="" id="password" placeholder="********">
+                            <span class="sign__password--error sign--disabled">La contraseña debe tener al menos 8
+                                caracteres</span>
                         </label>
                     </div>
 
-                    <div class="user__input">
+                    <div class="sign__input">
                         <label for="repeatPassword">
-                            <span class="user__password">Repita la contraseña</span>
-                            <input type="password" name="" id="repeatPassword">
+                            <span class="sign__password">Repetir contraseña</span>
+                            <input type="password" name="" id="repeatPassword" placeholder="********">
+                            <span class="sign__repeatPassword--error sign--disabled">Por favor ingrese la misma
+                                contraseña</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="user__button-style" id="user__button">Crear usuario</button>
+                    <div class="sign__input-checkbox">
+                        <label for="terms-services">
+                            <input type="checkbox" name="" id="terms-services">
+                            <span class="sign__terms-of-services">
+                                Acepto los
+                                <a href="#" class="sign__terms">terminos</a>
+                                y
+                                <a href="#" class="sign__service">servicios</a>
+                                de la pagina
+                            </span>
+                            <span class="sign__checkbox--error sign--disabled">Por favor marque la casilla para
+                                continuar</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="sign__button-submit-style" id="sign__button-submit">
+                        <span>Crear nuevo usuario</span>
+                    </button>
                 </div>
             </div>
         </form>
     </div>
 
     <!-- !pagina para ver la lista de usuarios -->
-    <!-- <div class="use" id="user">
-        <table cellspacing="0" class="user__table">
+    <div class="userdata" id="user">
+        <h1 class="userdata__title"></h1>
+        <table cellspacing="0" class="userdata__table">
             <thead>
                 <tr>
-                    <th class="user__item">Nombre de usuario</th>
-                    <th class="user__item">Nombre completo</th>
-                    <th class="user__item">Correo electronico</th>
-                    <th class="user__item">Eliminar</th>
-                    <th class="user__item">Actualizar</th>
+                    <th class="userdata__item">Nombre de usuario</th>
+                    <th class="userdata__item">Nombre completo</th>
+                    <th class="userdata__item">Correo electronico</th>
+                    <th class="userdata__item">Eliminar</th>
+                    <th class="userdata__item">Actualizar</th>
                 </tr>
             </thead>
         </table>
-    </div> -->
+    </div>
 
     <!-- !pagina para ver la lista de post -->
-    <div class="pos"></div>
+    <div class="publications">
+    </div>
 
     <!-- !pagina para ver los comentarios y mas -->
-    <div class="comments"></div>
+    <div class="comments">
+    </div>
 </body>
 
 </html>

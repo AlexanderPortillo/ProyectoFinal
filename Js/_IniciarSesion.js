@@ -29,8 +29,12 @@ export const iniciarSesion = (e) => {
 				}
 
 				if (buscarPalabra(cadena, palabra)) {
+					formulario.sendUser.value = '';
+					formulario.sendPassword.value = '';
 					window.location.href = '../Html/moderador.html';
 				} else {
+					formulario.sendUser.value = '';
+					formulario.sendPassword.value = '';
 					window.location.href = '../Html/usuario.html';
 				}
 			} else {
@@ -41,6 +45,5 @@ export const iniciarSesion = (e) => {
 			// alert('no coinciden las credenciales');
 			console.log('El usuario no coincide');
 		}
-
 	});
 };
