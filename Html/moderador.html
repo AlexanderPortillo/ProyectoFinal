@@ -6,30 +6,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ! Icon -->
-    <link rel="icon" href="">
+    <!-- <link rel="icon" href=""> -->
+    <!-- ! Font Awesome -->
+    <!-- <script src="https://kit.fontawesome.com/627b2b4bd2.js" defer crossorigin="anonymous"></script> -->
     <!-- ! List style -->
     <link rel="stylesheet" href="../Css/moderador.css">
     <!-- ! JavaScript -->
-    <script src="../Js/index.js" defer></script>
-    <title>Moderador</title>
+    <script src="../Js/moderador.js" type="module" defer></script>
+    <title>Pagina moderador</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <ul class="navbar__ul">
-            <li class="navbar__item">
-                <a href="#">Crear nuevas publicaciones</a>
-            </li>
+    <!-- !pagina de inicio -->
+    <div class="home"></div>
 
-            <li class="navbar__item">
-                <a href="#">Ver lista de usuarios</a>
-            </li>
+    <!-- !pagina para crear nuevos usuarios y post -->
+    <div class="user-post">
+        <!-- !formulario para crear un post -->
+        <form action="" id="post-user">
+            <div class="post">
+                <div class="post__inputs">
+                    <div class="post__input">
+                        <label for="url">
+                            <span class="post__url">Ingrese una URL</span>
+                            <input type="url" name="" id="url" placeholder="Ingrese la url de la imagen">
+                            <span class="post__url-error post--disabled">URL invalido</span>
+                        </label>
+                    </div>
 
-            <li class="navbar__item">
-                <a href="#">Ver publicaciones</a>
-            </li>
-        </ul>
+                    <div class="post__input">
+                        <label for="title">
+                            <span class="post__title">Ingrese el nombre de la pelicula</span>
+                            <input type="text" name="" id="title" placeholder="Ingrese el nombre de la pelicula">
+                            <span class="post__title--error post--disabled">Nombre invalido</span>
+                        </label>
+                    </div>
+
+                    <div class="post__input">
+                        <label for="description">
+                            <span class="post__description">Ingrese una descripcion de la pelicula</span>
+                            <textarea name="" id="description" cols="20" rows="4"></textarea>
+                            <span class="post__description post__description--error post--disabled">Error descripcion no
+                                validad</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="post__button-style" id="post__button">Crear Post</button>
+                </div>
+            </div>
+
+            <!-- !formulario para crear usuarios -->
+            <div class="user">
+                <div class="user__inputs">
+                    <div class="user__input">
+                        <label for="nameUser">
+                            <span class="user__nameUser">Ingrese un nombre de usuario</span>
+                            <input type="text" name="" id="nameUser">
+                        </label>
+                    </div>
+
+                    <div class="user__input">
+                        <label for="fullname">
+                            <span class="user__fullname">Ingrese su nombre completo</span>
+                            <input type="text" name="" id="fullname">
+                        </label>
+                    </div>
+
+                    <div class="user__input">
+                        <label for="email">
+                            <span class="user__email">Ingrese un correo electronico</span>
+                            <input type="email" name="" id="email">
+                        </label>
+                    </div>
+
+                    <div class="user__input">
+                        <label for="password">
+                            <span class="user__password">Ingrese una contraseña</span>
+                            <input type="password" name="" id="password">
+                        </label>
+                    </div>
+
+                    <div class="user__input">
+                        <label for="repeatPassword">
+                            <span class="user__password">Repita la contraseña</span>
+                            <input type="password" name="" id="repeatPassword">
+                        </label>
+                    </div>
+
+                    <button type="submit" class="user__button-style" id="user__button">Crear usuario</button>
+                </div>
+            </div>
+        </form>
     </div>
+
+    <!-- !pagina para ver la lista de usuarios -->
+    <!-- <div class="use" id="user">
+        <table cellspacing="0" class="user__table">
+            <thead>
+                <tr>
+                    <th class="user__item">Nombre de usuario</th>
+                    <th class="user__item">Nombre completo</th>
+                    <th class="user__item">Correo electronico</th>
+                    <th class="user__item">Eliminar</th>
+                    <th class="user__item">Actualizar</th>
+                </tr>
+            </thead>
+        </table>
+    </div> -->
+
+    <!-- !pagina para ver la lista de post -->
+    <div class="pos"></div>
+
+    <!-- !pagina para ver los comentarios y mas -->
+    <div class="comments"></div>
 </body>
 
 </html>

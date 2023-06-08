@@ -6,22 +6,146 @@
 	text-decoration: none;
 }
 
-.navbar {
-	width: 100%;
-	position: fixed;
-	background-color: red;
+// ::-webkit-scrollbar {
+// 	width: 0;
+// }
 
-	&__ul {
+// ::-webkit-scrollbar-thumb {
+// 	background-color: blue;
+// 	border: 20px solid red;
+// 	border-radius: 10px;
+// }
+
+body {
+	background-color: #596678;
+}
+
+.home {
+	height: 100vh;
+	background-color: red;
+}
+
+// !
+
+.user-post {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// flex-wrap: wrap;
+	height: 100vh;
+	background-color: yellow;
+	gap: 1rem;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	gap: 4rem;
+}
+
+.post {
+	width: 400px;
+	height: 400px;
+	background-color: red;
+	border-radius: 1rem;
+	padding: 1rem;
+
+	&__inputs {
 		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
+		flex-direction: column;
 		gap: 1rem;
-		padding: 1rem;
+
+		label {
+			display: flex;
+			flex-direction: column;
+			padding: 0 0 0.6rem 0;
+
+			span {
+				color: black;
+			}
+
+			input {
+				padding: 0.4rem 0;
+				border: none;
+				outline: none;
+				background-color: transparent;
+				border-bottom: 1px solid black;
+			}
+
+			textarea {
+				resize: none;
+				outline: none;
+				padding: 0.3rem;
+				border-radius: 0.4rem;
+				border: none;
+			}
+		}
+	}
+
+	&__url {
+	}
+
+	&__url-error {
+	}
+
+	&--disabled {
+		display: none;
+	}
+	&__title {
+	}
+
+	&__title--error {
+	}
+
+	&__description {
+	}
+
+	&__description--error {
+	}
+
+	&__button-style {
+	}
+}
+
+.user {
+	width: 400px;
+	height: 400px;
+	background-color: white;
+}
+
+// !
+
+.use {
+	height: 100vh;
+	padding: 1rem 6rem;
+
+	&__table {
+		width: 100%;
+		text-align: center;
 	}
 
 	&__item {
-		display: flex;
-		align-items: center;
-		font-size: 1.3rem;
+		padding: 0.5rem;
+		border: 1px solid black;
+		font-size: 1.2rem;
+		font-weight: bold;
+		background-color: gray;
+		border: none;
 	}
+
+	td {
+		padding-top: 0.5rem;
+		font-size: 1.2rem;
+		color: white;
+	}
+}
+
+.pos {
+	height: 100vh;
+	background-color: gray;
+}
+
+.comments {
+	height: 100vh;
+	background-color: black;
 }
