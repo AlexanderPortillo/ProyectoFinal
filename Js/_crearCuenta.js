@@ -4,6 +4,8 @@ const formulario = document.forms['form'];
 export const crearCuenta = (e) => {
 	e.preventDefault();
 
+	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
+
 	const expresionRegularUsuario = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
 	const expresionRegularNombre = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
@@ -96,7 +98,7 @@ export const crearCuenta = (e) => {
 		return;
 	}
 
-	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
+	// const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
 
 	if (localStorage.getItem('usuario') === null) {
 		formulario.user.value = '';
@@ -108,7 +110,13 @@ export const crearCuenta = (e) => {
 
 		elementos.push(datos);
 		localStorage.setItem('usuario', JSON.stringify(elementos));
-		alert('Se registro exitosamente');
+
+		let mensaje = document.getElementById('sign__button-submit');
+		mensaje.textContent = 'Se registro exitosamente';
+
+		setTimeout(function () {
+			mensaje.textContent = 'Crear cuenta';
+		}, tiempo);
 	} else {
 		elementos.forEach((element) => {
 			if (element.nombreUsuario === datos.nombreUsuario) {
@@ -141,7 +149,13 @@ export const crearCuenta = (e) => {
 
 					elementos.push(datos);
 					localStorage.setItem('usuario', JSON.stringify(elementos));
-					alert('Se registro exitosamente');
+
+					let mensaje = document.getElementById('sign__button-submit');
+					mensaje.textContent = 'Se registro exitosamente';
+
+					setTimeout(function () {
+						mensaje.textContent = 'Crear cuenta';
+					}, tiempo);
 				}
 			}
 		});
