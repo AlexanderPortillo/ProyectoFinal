@@ -44,7 +44,7 @@ form {
 .post__inputs label {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0.6rem 0;
+  padding: 0 0 0.3rem 0;
 }
 .post__inputs label span {
   color: #feffff;
@@ -52,7 +52,7 @@ form {
   cursor: pointer;
 }
 .post__inputs label input {
-  padding: 0.4rem 0;
+  padding: 0.3rem 0;
   border: none;
   outline: none;
   background-color: transparent;
@@ -84,8 +84,9 @@ form {
 .post--disabled {
   display: none;
 }
-.post__url--error, .post__title--error, .post__description--error {
-  color: black !important;
+.post__url--error, .post__title--error, .post__date--error, .post__description--error, .post__repeatUrl--error, .post__repeatTitle--error {
+  color: white !important;
+  text-shadow: 0 0 10px white !important;
 }
 .post__button-style {
   border: 0.1rem solid #24b4fb;
@@ -126,8 +127,8 @@ form {
   border-bottom: 0.1rem solid rgb(247, 247, 247) !important;
 }
 .sign__user--error, .sign__fullName--error, .sign__email--error, .sign__password--error, .sign__repeatPassword--error, .sign__checkbox--error, .sign__user--reload, .sign__email--reload {
-  color: rgb(247, 247, 247) !important;
-  font-size: 1rem !important;
+  color: white !important;
+  text-shadow: 0 0 10px white !important;
 }
 .sign label {
   display: flex;
