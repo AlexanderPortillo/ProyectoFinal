@@ -10,14 +10,9 @@
 	text-decoration: none;
 }
 
-.home {
-	background-color: black;
-	background-image: url('../Svg/wave.svg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
-}
+// !barra de navegacion (Andres)
 
+// *pagina crear post y usuarios (no tocar)
 .user-post {
 	display: flex;
 	justify-content: center;
@@ -250,6 +245,7 @@ form {
 	}
 }
 
+// *pagina para ver la lista de usuarios (no tocar)
 .userdata {
 	background-image: url('../Svg/circle-scatter-haikei.svg');
 	background-repeat: no-repeat;
@@ -306,11 +302,13 @@ form {
 	}
 }
 
+// !pagina para ver la lista de post (Jesse)
 .publications {
 	background-color: #001829;
 	height: 100vh;
 }
 
+// !pagina para ver los comentarios y mas
 .comments {
 	background-image: url('../Svg/blob-scene-haikei.svg');
 	background-position: center;

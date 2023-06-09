@@ -10,14 +10,6 @@
   text-decoration: none;
 }
 
-.home {
-  background-color: black;
-  background-image: url("../Svg/wave.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
-
 .user-post {
   display: flex;
   justify-content: center;
