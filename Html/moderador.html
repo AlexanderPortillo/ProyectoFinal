@@ -19,124 +19,147 @@
 </head>
 
 <body>
-    <!-- !pagina para crear nuevos usuarios y post -->
-    <div class="user-post">
-        <form action="" id="form">
-            <!-- !formulario para crear un post -->
-            <div class="post">
-                <div class="post__inputs">
-                    <div class="post__input">
-                        <label for="url">
-                            <span class="post__url">Foto de portada</span>
-                            <input type="url" name="" id="url" placeholder="Ingrese la url de la imagen">
-                            <span class="post__url--error post--disabled">Ingrese una direccion validad</span>
-                            <span class="post__repeatUrl--error post--disabled">Esta URL ya esta en uso</span>
-                        </label>
-                    </div>
+    <div class="containerModerator">
+        <div class="navbar">
+            <ul class="navbar__ul">
+                <li class="navbar__li">
+                    <a href="moderador.html" class="navbar__item navbar--active">Crear publicacion o usuario</a>
+                </li>
 
-                    <div class="post__input">
-                        <label for="title">
-                            <span class="post__title">Titulo de la pelicula</span>
-                            <input type="text" name="" id="title" placeholder="Ingrese el titulo de la pelicula">
-                            <span class="post__title--error post--disabled">Ingrese un titulo valido</span>
-                            <span class="post__repeatTitle--error post--disabled">Este titulo ya esta en uso</span>
-                        </label>
-                    </div>
+                <li class="navbar__li">
+                    <a href="moderadorComentarios.html" class="navbar__item">Ver comentarios</a>
+                </li>
 
-                    <div class="post__input">
-                        <label for="date">
-                            <span class="post__date">Fecha de estreno</span>
-                            <input type="date" name="" id="date">
-                            <span class="post__date--error post--disabled">La fecha no puede ir vacia</span>
-                        </label>
-                    </div>
+                <li class="navbar__li">
+                    <a href="moderadorPublicaciones.html" class="navbar__item">Ver publicaciones</a>
+                </li>
 
-                    <div class="post__input">
-                        <label for="description">
-                            <span class="post__description">Descripcion de la pelicula</span>
-                            <textarea name="" id="description" cols="20" rows="3"></textarea>
-                            <span class="post__description--error post--disabled">Ingrese una descripcion validad</span>
-                        </label>
-                    </div>
+                <li class="navbar__li">
+                    <a href="moderadorUsuarios.html" class="navbar__item">Ver usuarios</a>
+                </li>
+            </ul>
+        </div>
 
-                    <button type="submit" class="post__button-style" id="post__button">
-                        <span>Crear nueva publicacion</span>
-                    </button>
+        <!-- !pagina para crear nuevos usuarios y post -->
+        <div class="user-post">
+            <form action="" id="form">
+                <!-- !formulario para crear un post -->
+                <div class="post">
+                    <div class="post__inputs">
+                        <div class="post__input">
+                            <label for="url">
+                                <span class="post__url">Foto de portada</span>
+                                <input type="url" name="" id="url" placeholder="Ingrese la url de la imagen">
+                                <span class="post__url--error post--disabled">Ingrese una direccion validad</span>
+                                <span class="post__repeatUrl--error post--disabled">Esta URL ya esta en uso</span>
+                            </label>
+                        </div>
+
+                        <div class="post__input">
+                            <label for="title">
+                                <span class="post__title">Titulo de la pelicula</span>
+                                <input type="text" name="" id="title" placeholder="Ingrese el titulo de la pelicula">
+                                <span class="post__title--error post--disabled">Ingrese un titulo valido</span>
+                                <span class="post__repeatTitle--error post--disabled">Este titulo ya esta en uso</span>
+                            </label>
+                        </div>
+
+                        <div class="post__input">
+                            <label for="date">
+                                <span class="post__date">Fecha de estreno</span>
+                                <input type="date" name="" id="date">
+                                <span class="post__date--error post--disabled">La fecha no puede ir vacia</span>
+                            </label>
+                        </div>
+
+                        <div class="post__input">
+                            <label for="description">
+                                <span class="post__description">Descripcion de la pelicula</span>
+                                <textarea name="" id="description" cols="20" rows="3"></textarea>
+                                <span class="post__description--error post--disabled">Ingrese una descripcion
+                                    validad</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="post__button-style" id="post__button">
+                            <span>Crear nueva publicacion</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- !formulario para crear usuarios -->
-            <div class="sign">
-                <div class="sign__inputs">
-                    <div class="sign__input">
-                        <label for="user">
-                            <span class="sign__user">Nombre de usuario</span>
-                            <input type="text" name="" id="user" placeholder="Ingrese su nombre de usuario">
-                            <span class="sign__user--error sign--disabled">Por favor ingrese un nombre de usuario
-                                valido</span>
-                            <span class="sign__user--reload sign--disabled">Este nombre de usuario ya esta en
-                                uso</span>
-                        </label>
+                <!-- !formulario para crear usuarios -->
+                <div class="sign">
+                    <div class="sign__inputs">
+                        <div class="sign__input">
+                            <label for="user">
+                                <span class="sign__user">Nombre de usuario</span>
+                                <input type="text" name="" id="user" placeholder="Ingrese su nombre de usuario">
+                                <span class="sign__user--error sign--disabled">Por favor ingrese un nombre de usuario
+                                    valido</span>
+                                <span class="sign__user--reload sign--disabled">Este nombre de usuario ya esta en
+                                    uso</span>
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="fullName">
+                                <span class="sign__fullName">Nombre completo</span>
+                                <input type="text" name="" id="fullName" placeholder="Ingrese su nombre completo">
+                                <span class="sign__fullName--error sign--disabled">Por favor ingrese un nombre
+                                    valido</span>
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="email">
+                                <span class="sign__email">Correo electronico</span>
+                                <input type="email" name="" id="email" placeholder="Ingrese un correo electronico">
+                                <span class="sign__email--error sign--disabled">Por favor ingrese un email valido</span>
+                                <span class="sign__email--reload sign--disabled">Este correo electronico ya esta en
+                                    uso</span>
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="password">
+                                <span class="sign__password">Contraseña</span>
+                                <input type="password" name="" id="password" placeholder="********">
+                                <span class="sign__password--error sign--disabled">La contraseña debe tener al menos 8
+                                    caracteres</span>
+                            </label>
+                        </div>
+
+                        <div class="sign__input">
+                            <label for="repeatPassword">
+                                <span class="sign__password">Repetir contraseña</span>
+                                <input type="password" name="" id="repeatPassword" placeholder="********">
+                                <span class="sign__repeatPassword--error sign--disabled">Por favor ingrese la misma
+                                    contraseña</span>
+                            </label>
+                        </div>
+
+                        <div class="sign__input-checkbox">
+                            <label for="terms-services">
+                                <input type="checkbox" name="" id="terms-services">
+                                <span class="sign__terms-of-services">
+                                    Acepto los
+                                    <a href="#" class="sign__terms">terminos</a>
+                                    y
+                                    <a href="#" class="sign__service">servicios</a>
+                                    de la pagina
+                                </span>
+                                <span class="sign__checkbox--error sign--disabled">Por favor marque la casilla para
+                                    continuar</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="sign__button-submit-style" id="sign__button-submit">
+                            <span>Crear nuevo usuario</span>
+                        </button>
                     </div>
-
-                    <div class="sign__input">
-                        <label for="fullName">
-                            <span class="sign__fullName">Nombre completo</span>
-                            <input type="text" name="" id="fullName" placeholder="Ingrese su nombre completo">
-                            <span class="sign__fullName--error sign--disabled">Por favor ingrese un nombre
-                                valido</span>
-                        </label>
-                    </div>
-
-                    <div class="sign__input">
-                        <label for="email">
-                            <span class="sign__email">Correo electronico</span>
-                            <input type="email" name="" id="email" placeholder="Ingrese un correo electronico">
-                            <span class="sign__email--error sign--disabled">Por favor ingrese un email valido</span>
-                            <span class="sign__email--reload sign--disabled">Este correo electronico ya esta en
-                                uso</span>
-                        </label>
-                    </div>
-
-                    <div class="sign__input">
-                        <label for="password">
-                            <span class="sign__password">Contraseña</span>
-                            <input type="password" name="" id="password" placeholder="********">
-                            <span class="sign__password--error sign--disabled">La contraseña debe tener al menos 8
-                                caracteres</span>
-                        </label>
-                    </div>
-
-                    <div class="sign__input">
-                        <label for="repeatPassword">
-                            <span class="sign__password">Repetir contraseña</span>
-                            <input type="password" name="" id="repeatPassword" placeholder="********">
-                            <span class="sign__repeatPassword--error sign--disabled">Por favor ingrese la misma
-                                contraseña</span>
-                        </label>
-                    </div>
-
-                    <div class="sign__input-checkbox">
-                        <label for="terms-services">
-                            <input type="checkbox" name="" id="terms-services">
-                            <span class="sign__terms-of-services">
-                                Acepto los
-                                <a href="#" class="sign__terms">terminos</a>
-                                y
-                                <a href="#" class="sign__service">servicios</a>
-                                de la pagina
-                            </span>
-                            <span class="sign__checkbox--error sign--disabled">Por favor marque la casilla para
-                                continuar</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="sign__button-submit-style" id="sign__button-submit">
-                        <span>Crear nuevo usuario</span>
-                    </button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 

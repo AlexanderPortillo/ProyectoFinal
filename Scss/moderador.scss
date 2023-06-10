@@ -1,7 +1,3 @@
-.none {
-	display: none !important;
-}
-
 * {
 	padding: 0;
 	margin: 0;
@@ -11,18 +7,54 @@
 }
 
 // !barra de navegacion (Andres)
+.containerModerator {
+	background-image: url('../Svg/layered-peaks-haikei.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.navbar {
+	padding: 1rem;
+	box-shadow: 0 0 30px black;
+
+	&__ul {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&--active {
+		color: white !important;
+		font-weight: bold !important;
+		font-size: 1.7rem !important;
+	}
+
+	&__li {
+	}
+
+	&__item {
+		font-size: 1.5rem;
+		color: #0071e2a6;
+		border-bottom: 1px solid transparent;
+		transition: border-bottom 1s, color 1s, text-shadow 1s;
+
+		&:hover {
+			border-bottom: 1px solid #0071e2;
+			color: #0071e2;
+			text-shadow: 0 0 20px #0071e2;
+		}
+	}
+}
 
 // *pagina crear post y usuarios (no tocar)
 .user-post {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	gap: 1rem;
-	background-image: url('../Svg/layered-peaks-haikei.svg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 }
 
 form {
@@ -250,13 +282,15 @@ form {
 }
 
 // *pagina para ver la lista de usuarios (no tocar)
-.userdata {
-	background-image: url('../Svg/circle-scatter-haikei.svg');
+.containerUser {
+	background-image: url('../Svg/layered-peaks.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
+}
 
+.userdata {
 	&__title {
 		padding-top: 1rem;
 		text-align: center;
@@ -307,16 +341,25 @@ form {
 }
 
 // !pagina para ver la lista de post (Jesse)
-.publications {
-	background-color: #001829;
+.containerPublications {
+	background-image: url('../Svg/layered-haikei.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	height: 100vh;
 }
 
+.publications {
+}
+
 // !pagina para ver los comentarios y mas
-.comments {
-	background-image: url('../Svg/blob-scene-haikei.svg');
+.containerComments {
+	background-image: url('../Svg/peaks-haikei.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
+}
+
+.comments {
 }
