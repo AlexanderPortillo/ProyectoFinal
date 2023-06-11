@@ -56,14 +56,17 @@ function eliminar(i) {
 	actualizarlocalStorage();
 	actualizarInterfaz();
 }
+
 function actualizarlocalStorage() {
 	localStorage.setItem('usuario', JSON.stringify(cargar));
 }
+
 function actualizarInterfaz() {
 	const contenedor = document.querySelector('.userdata__body');
 	contenedor.innerHTML = '';
 	cargarUsuarios();
 }
+
 function mostrarAlertaActualizacion() {
 	const nuevosDatos = {};
 	nuevosDatos.nombreUsuario = prompt('Ingrese el nuevo nombre de usuario');
@@ -71,6 +74,7 @@ function mostrarAlertaActualizacion() {
 	nuevosDatos.correoElectronico = prompt('Ingrese el nuevo correo electronico');
 	return nuevosDatos;
 }
+
 function actualizarElemento(i, nuevosDatos) {
 	const elemento = cargar[i];
 	if (elemento) {

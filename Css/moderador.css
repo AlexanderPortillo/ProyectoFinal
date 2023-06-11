@@ -285,6 +285,62 @@ form {
   height: 100vh;
 }
 
+.publications {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.publications__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 270px;
+  height: 430px;
+  background-color: #15273f;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #0b1629;
+}
+.publications__img {
+  width: 100%;
+  height: 180px;
+  border: 0.1rem solid white;
+  border-radius: 1rem;
+}
+.publications__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.publications__title {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.publications__text {
+  color: #7f93b4;
+  font-size: 1rem;
+  text-align: justify;
+}
+.publications__date {
+  color: #0df6ee;
+  font-weight: bold;
+}
+.publications__hr {
+  border: none;
+  border-bottom: 0.1rem solid #7f93b4;
+}
+.publications__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .containerComments {
   background-image: url("../Svg/peaks-haikei.svg");
   background-position: center;

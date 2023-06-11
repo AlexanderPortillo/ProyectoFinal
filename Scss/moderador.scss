@@ -350,6 +350,67 @@ form {
 }
 
 .publications {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 1rem;
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		width: 270px;
+		height: 430px;
+		background-color: #15273f;
+		padding: 1rem;
+		border-radius: 1rem;
+		box-shadow: 0 0 20px #0b1629;
+	}
+
+	&__img {
+		width: 100%;
+		height: 180px;
+		border: 0.1rem solid white;
+		border-radius: 1rem;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 1rem;
+		}
+	}
+
+	&__title {
+		color: #ffffff;
+		font-size: 1.2rem;
+	}
+
+	&__text {
+		color: #7f93b4;
+		font-size: 1rem;
+		text-align: justify;
+	}
+
+	&__date {
+		color: #0df6ee;
+		font-weight: bold;
+	}
+
+	&__hr {
+		border: none;
+		border-bottom: 0.1rem solid #7f93b4;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+	}
 }
 
 // !pagina para ver los comentarios y mas
