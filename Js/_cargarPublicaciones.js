@@ -2,14 +2,15 @@ let cargar = JSON.parse(localStorage.getItem('post')) || [];
 
 export const cargarPost = () => {
 	const contenedor = document.querySelector('.publications');
-
-	// const mensaje = document.querySelector('.');
+	const mensaje = document.querySelector('.publications__content');
 
 	cargar.reverse();
 
 	if (localStorage.getItem('post') === null) {
-		// alert('Vacio');
+		mensaje.classList.remove('publications--disabled');
 	} else {
+		mensaje.classList.add('publications--disabled');
+
 		cargar.forEach((element, i) => {
 			const plantilla = `
                 <div class="publications__card">
@@ -71,7 +72,7 @@ function actualizarlocalStorage() {
 }
 
 function actualizarInterfaz() {
-	const contenedor = document.querySelectorAll('.publications');
+	const contenedor = document.querySelector('.publications');
 	contenedor.innerHTML = '';
 	cargarPost();
 }
