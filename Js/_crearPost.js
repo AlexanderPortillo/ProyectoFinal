@@ -8,7 +8,7 @@ export const crearPost = (e) => {
 
 	const validarUrl = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*[^\s\/]$/;
 	const validarTitulo = /^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/;
-	const validarDescripcion = /^[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/;
+	const validarDescripcion = /^[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+$/;
 
 	const datos = {
 		id: uuid.v4(),
