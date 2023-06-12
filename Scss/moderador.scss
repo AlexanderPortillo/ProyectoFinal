@@ -357,6 +357,18 @@ form {
 	gap: 1rem;
 	padding: 1rem;
 
+	&--disabled {
+		display: none;
+	}
+
+	&__content {
+		font-size: 3rem;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 0 0 0.6rem black;
+	}
+
 	&__card {
 		display: flex;
 		flex-direction: column;

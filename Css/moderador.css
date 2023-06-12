@@ -293,6 +293,16 @@ form {
   gap: 1rem;
   padding: 1rem;
 }
+.publications--disabled {
+  display: none;
+}
+.publications__content {
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 0.6rem black;
+}
 .publications__card {
   display: flex;
   flex-direction: column;
