@@ -6,10 +6,10 @@ export const crearCuenta = (e) => {
 
 	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
 
-	const expresionRegularUsuario = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
+	const expresionRegularUsuario = /^[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+$/;
 	const expresionRegularNombre = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-	const expresionRegularContraseña = /^(?!.*\s)(?=.*[+*])[\S]{8,}$/;
+	const expresionRegularContraseña = /^[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+$/;
 
 	const datos = {
 		nombreUsuario: formulario.user.value,
