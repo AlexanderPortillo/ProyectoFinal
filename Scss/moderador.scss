@@ -382,10 +382,12 @@ form {
 	}
 
 	&__img {
-		width: 100%;
-		height: 180px;
+		max-width: 150px;
+		max-height: 150px;
 		border: 0.1rem solid white;
 		border-radius: 1rem;
+		margin-left: auto;
+  		margin-right: auto;
 
 		img {
 			width: 100%;
@@ -398,6 +400,7 @@ form {
 	&__title {
 		color: #ffffff;
 		font-size: 1.2rem;
+		text-align: center;
 	}
 
 	&__text {
