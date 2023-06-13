@@ -7,8 +7,8 @@ export const crearPost = (e) => {
 	const elementos = JSON.parse(localStorage.getItem('post')) || [];
 
 	const validarUrl = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*[^\s\/]$/;
-	const validarTitulo = /^(?!.*\s)[a-zA-Z0-9]+(?: [a-zA-Z0-9]+)*$/;
-	const validarDescripcion = /^(?!.*\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+$/;
+	const validarTitulo = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
+	const validarDescripcion = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
 
 	const datos = {
 		id: uuid.v4(),

@@ -9,7 +9,7 @@ export const cargarPost = () => {
 	if (localStorage.getItem('post') === null) {
 		mensaje.classList.remove('publications--disabled');
 	} else {
-		mensaje.classList.add('publications--disabled');
+		//mensaje.classList.add('publications--disabled');
 
 		cargar.forEach((element, i) => {
 			const plantilla = `
