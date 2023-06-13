@@ -116,6 +116,7 @@ body {
 	&__sign-in--active,
 	&__sign-up--active {
 		color: #ced2d8;
+		text-shadow: 0 0 0.2rem #ced2d8;
 		border-bottom: 4px solid #1f807d;
 	}
 }
@@ -128,7 +129,7 @@ body {
 	}
 
 	&--error {
-		border-bottom: 0.1rem solid red !important;
+		border-bottom: 0.1rem solid white !important;
 	}
 
 	&__user--error,
@@ -139,7 +140,10 @@ body {
 	&__checkbox--error,
 	&__user--reload,
 	&__email--reload {
-		color: red !important;
+		color: white !important;
+		text-shadow: 0 0 10px white !important;
+		font-weight: bold !important;
+		font-size: 1.5rem;
 	}
 
 	label {
