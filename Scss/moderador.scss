@@ -383,14 +383,15 @@ form {
 
 	&__img {
 		width: 100%;
-		height: 180px;
-		border: 0.1rem solid white;
+		height: 150px;
+		//border: 0.1rem solid white;
 		border-radius: 1rem;
+		
 
 		img {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
+			object-fit: contain;
 			border-radius: 1rem;
 		}
 	}
@@ -398,6 +399,7 @@ form {
 	&__title {
 		color: #ffffff;
 		font-size: 1.2rem;
+		text-align: center;
 	}
 
 	&__text {
