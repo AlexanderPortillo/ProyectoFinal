@@ -65,14 +65,6 @@ function actualizarInterfaz() {
 	cargarUsuarios();
 }
 
-// function mostrarAlertaActualizacion() {
-// 	const nuevosDatos = {};
-// 	nuevosDatos.nombreUsuario = prompt('Ingrese el nuevo nombre de usuario');
-// 	nuevosDatos.nombreCompleto = prompt('Ingrese el nuevo nombre');
-// 	nuevosDatos.correoElectronico = prompt('Ingrese el nuevo correo electronico');
-// 	return nuevosDatos;
-// }
-
 function mostrarAlertaActualizacion() {
 	const nuevosDatos = {};
 	const expresionRegularUsuario = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡]+)*$/;

@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"index": "sass -w ../Scss/index.scss ../Css/index.css",
-		"moderador": "sass -w ../Scss/moderador.scss ../Css/moderador.css"
+		"moderador": "sass -w ../Scss/moderador.scss ../Css/moderador.css",
+		"usuario": "sass -w ../Scss/usuario.scss ../Css/usuario.css"
 	},
 	"keywords": [],
 	"author": "",
