@@ -1,4 +1,6 @@
 const formulario = document.forms['form'];
+const moderador = 'AlexPor';
+const contraseña = '682725';
 
 export const iniciarSesion = (e) => {
 	e.preventDefault();
@@ -10,40 +12,24 @@ export const iniciarSesion = (e) => {
 
 	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
 
-	elementos.forEach((element) => {
-		if (element.nombreUsuario === datos.nombreUsuario) {
-			if (element.contraseña === datos.contraseña) {
-				alert('coinciden las credenciales');
-
-				const cadena = datos.nombreUsuario;
-				const palabra = 'moderador';
-
-				function buscarPalabra(cadena, palabra) {
-					var palabras = cadena.split(' '); // Divide la cadena en palabras separadas
-
-					if (palabras.includes(palabra)) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-
-				if (buscarPalabra(cadena, palabra)) {
-					formulario.sendUser.value = '';
-					formulario.sendPassword.value = '';
-					window.location.href = '../Html/moderador.html';
-				} else {
+	if (datos.nombreUsuario === moderador && datos.contraseña === contraseña) {
+		formulario.sendUser.value = '';
+		formulario.sendPassword.value = '';
+		window.location.href = '../Html/moderador.html';
+	} else {
+		elementos.forEach((element) => {
+			if (element.nombreUsuario === datos.nombreUsuario) {
+				if (element.contraseña === datos.contraseña) {
+					alert('coinciden las credenciales');
 					formulario.sendUser.value = '';
 					formulario.sendPassword.value = '';
 					window.location.href = '../Html/usuario.html';
+				} else {
+					alert('no coinciden las credenciales');
 				}
 			} else {
-				alert('no coinciden las credenciales');
-				// console.log('La contrasela es incorrecta');
+				alert('El usuario no coincide');
 			}
-		} else {
-			// alert('no coinciden las credenciales');
-			console.log('El usuario no coincide');
-		}
-	});
+		});
+	}
 };

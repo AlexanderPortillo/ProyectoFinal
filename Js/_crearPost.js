@@ -6,7 +6,7 @@ export const crearPost = (e) => {
 
 	const elementos = JSON.parse(localStorage.getItem('post')) || [];
 
-	const validarUrl =  /^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/;
+	const validarUrl = /^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/;
 	const validarTitulo = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
 	const validarDescripcion = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
 
