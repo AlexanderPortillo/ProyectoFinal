@@ -10,8 +10,6 @@ export const crearCuenta = (e) => {
 	const expresionRegularNombre = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 	const expresionRegularContraseña = /^(?=.*.{8,})[A-Za-z0-9#"$@/!*-]+$/;
-	
-
 
 	const datos = {
 		nombreUsuario: formulario.user.value,

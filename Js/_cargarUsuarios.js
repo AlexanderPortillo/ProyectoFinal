@@ -70,39 +70,45 @@ function mostrarAlertaActualizacion() {
 	const expresionRegularUsuario = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
 	const expresionRegularNombre = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-  
+
 	let nombreUsuario = prompt('Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)');
-	while (nombreUsuario !== null && nombreUsuario !== '' && !expresionRegularUsuario.test(nombreUsuario)) {
-	  alert('El nombre de usuario no cumple con el formato requerido');
-	  nombreUsuario = prompt('Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)');
+
+	while (
+		nombreUsuario !== null && nombreUsuario !== '' && !expresionRegularUsuario.test(nombreUsuario)) {
+		alert('El nombre de usuario no cumple con el formato requerido');
+		nombreUsuario = prompt('Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)');
 	}
+
 	if (nombreUsuario !== null && nombreUsuario !== '') {
-	  nuevosDatos.nombreUsuario = nombreUsuario;
+		nuevosDatos.nombreUsuario = nombreUsuario;
 	}
-  
-	let nombreCompleto = prompt('Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)');
+
+	let nombreCompleto = prompt(
+		'Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)'
+	);
+
 	while (nombreCompleto !== null && nombreCompleto !== '' && !expresionRegularNombre.test(nombreCompleto)) {
-	  alert('El nombre completo no cumple con el formato requerido');
-	  nombreCompleto = prompt('Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)');
+		alert('El nombre completo no cumple con el formato requerido');
+		nombreCompleto = prompt('Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)');
 	}
+
 	if (nombreCompleto !== null && nombreCompleto !== '') {
-	  nuevosDatos.nombreCompleto = nombreCompleto;
+		nuevosDatos.nombreCompleto = nombreCompleto;
 	}
-  
+
 	let correoElectronico = prompt('Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)');
+
 	while (correoElectronico !== null && correoElectronico !== '' && !expresionRegularCorreo.test(correoElectronico)) {
-	  alert('El correo electrónico no cumple con el formato requerido');
-	  correoElectronico = prompt('Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)');
+		alert('El correo electrónico no cumple con el formato requerido');
+		correoElectronico = prompt('Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)');
 	}
+
 	if (correoElectronico !== null && correoElectronico !== '') {
-	  nuevosDatos.correoElectronico = correoElectronico;
+		nuevosDatos.correoElectronico = correoElectronico;
 	}
-  
+
 	return nuevosDatos;
-  }
-  
-  
-  
+}
 
 function actualizarElemento(i, nuevosDatos) {
 	const elemento = cargar[i];
