@@ -67,13 +67,53 @@ function actualizarInterfaz() {
 	cargarUsuarios();
 }
 
+// function mostrarAlertaActualizacion() {
+// 	const nuevosDatos = {};
+// 	nuevosDatos.nombreUsuario = prompt('Ingrese el nuevo nombre de usuario');
+// 	nuevosDatos.nombreCompleto = prompt('Ingrese el nuevo nombre');
+// 	nuevosDatos.correoElectronico = prompt('Ingrese el nuevo correo electronico');
+// 	return nuevosDatos;
+// }
+
 function mostrarAlertaActualizacion() {
-	const nuevosDatos = {};
-	nuevosDatos.nombreUsuario = prompt('Ingrese el nuevo nombre de usuario');
-	nuevosDatos.nombreCompleto = prompt('Ingrese el nuevo nombre');
-	nuevosDatos.correoElectronico = prompt('Ingrese el nuevo correo electronico');
-	return nuevosDatos;
+    const nuevosDatos = {};
+    const expresionRegularUsuario = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡]+)*$/;
+    const expresionRegularNombre = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡]+)*$/;
+    const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+
+    const nombreUsuario = prompt('Ingrese el nuevo nombre de usuario');
+    if (nombreUsuario !== '') {
+        if (expresionRegularUsuario.test(nombreUsuario)) {
+            nuevosDatos.nombreUsuario = nombreUsuario;
+        } else {
+            alert('El nombre de usuario no cumple con el formato requerido');
+        }
+    }
+
+    const nombreCompleto = prompt('Ingrese el nuevo nombre completo');
+    if (nombreCompleto !== '') {
+        if (expresionRegularNombre.test(nombreCompleto)) {
+            nuevosDatos.nombreCompleto = nombreCompleto;
+        } else {
+            alert('El nombre completo no cumple con el formato requerido');
+        }
+    }
+
+    const correoElectronico = prompt('Ingrese el nuevo correo electrónico');
+    if (correoElectronico !== '') {
+        if (expresionRegularCorreo.test(correoElectronico)) {
+            nuevosDatos.correoElectronico = correoElectronico;
+        } else {
+            alert('El correo electrónico no cumple con el formato requerido');
+        }
+    }
+
+    return nuevosDatos;
 }
+
+
+
+
 
 function actualizarElemento(i, nuevosDatos) {
 	const elemento = cargar[i];
