@@ -10,12 +10,12 @@
     <!-- ! List style -->
     <link rel="stylesheet" href="../Css/usuario.css">
     <!-- ! JavaScript -->
-    <script src="../Js/" type="module" defer></script>
+    <script src="../Js/usuarioPerfil.js" defer></script>
     <title>Usuario</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="containerUser">
         <div class="nav">
             <ul class="nav__ul">
                 <li class="nav__li">
@@ -37,7 +37,35 @@
         </div>
 
         <div class="user">
+            <div class="user__data">
+                <h1 class="user__title">Confimar usuario</h1>
 
+                <form action="#">
+                    <div class="user__inputs">
+                        <div class="user__input">
+                            <label for="user">
+                                <span class="user__name">Ingrese su nombre de usuario</span>
+                                <input type="text" name="" id="user">
+                            </label>
+                        </div>
+
+                        <div class="user__input">
+                            <label for="password">
+                                <span class="user__password">Ingrese su contraseña</span>
+                                <input type="password" name="" id="password">
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div class="user__container--btn">
+                        <button class="user__btn">Verificar identidad</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="user__profile disabled">
+            </div>
         </div>
     </div>
 </body>
