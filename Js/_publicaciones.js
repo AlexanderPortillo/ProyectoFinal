@@ -27,8 +27,28 @@ export const cargarPost = () => {
                     <hr class="publications__hr">
                 </div>
             `;
+			/********************************************************************************************** */
+			const CajaComentario = `
+            <div class="publications__box"> 
+				<h2>Comentarios</h2>
+				<div class="content">
+				<div class="comments-list-approved"></div>
+				</div>
+
+				<div class="comentarios__form">
+    			<textarea class="comentarios__text" placeholder="Escribe tu comentario"></textarea>
+    			<button class="comentarios__submit">Enviar Comentario</button>
+    			<p class="comentarios-message"></p>
+  				</div>
+			</div>
+            `;
+			/********************************************************************************************** */
 
 			contenedor.innerHTML += plantilla;
+
+			/********************************************************************************************** */
+			contenedor.innerHTML += CajaComentario;
+			/********************************************************************************************** */
 		});
 	}
 };

@@ -359,4 +359,13 @@ form {
   height: 100vh;
 }
 
+.comments-list .approve-button, .comments-list .delete-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=moderador.css.map */

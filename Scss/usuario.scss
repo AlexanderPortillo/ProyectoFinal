@@ -136,4 +136,60 @@
 		align-items: center;
 		gap: 1rem;
 	}
+
+	/*******************************************************/
+	&__box {
+		width: 400px;
+		height: 430px;
+		background-color: #15273f;
+		padding: 1rem;
+		border-radius: 1rem;
+		box-shadow: 0 0 20px #0b1629;
+		margin: -15px;
+	}
+
+	h2{
+		text-align: center;
+		padding: 10px;
+	}
+	
+	/*******************************************************/
 }
+
+.content{
+	width: 370px; /* Tamaño del contenedor */
+  	height: 200px; /* Tamaño del contenedor */
+  	overflow: auto;
+	margin-bottom: 10px;
+}
+
+.comentarios {
+	
+	background-color: #dfcdcd80;
+	padding: 10px;
+	margin-bottom: 10px;
+
+	&__form{
+		margin-bottom: 20px;
+	}
+
+	&__text{
+		width: 370px;
+		height: 100px;
+		padding: 5px;
+		resize: none;
+	}
+
+	&__submit{
+		background-color: #333;
+		color: #fff;
+		border: none;
+		padding: 10px 20px;
+		cursor: pointer;
+	}
+
+	&__message{
+		color: green;
+	}
+}
+
