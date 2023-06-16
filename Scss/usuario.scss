@@ -17,9 +17,33 @@
 	justify-content: center;
 }
 
+.containerBPublicaciones {
+	background-image: url('../Svg/layered-peaks-haikei.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.containerPublicaiones {
+	background-image: url('../Svg/layered-peaks-haikei.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
 .nav {
 	width: 100%;
-	background-color: #212a3ee3;
+	// background-color: #212a3ee3;
+	background-image: url('../Svg/layered-peaks-haikei.svg');
+	box-shadow: 0 0 30px black;
 	padding: 1.5rem;
 	position: fixed;
 
@@ -36,11 +60,14 @@
 	&__li-item {
 		color: #e3f4f4;
 		border-bottom: 0.2rem solid transparent;
-		transition: color 1s, border-bottom 1s;
+		transition: color 1s, border-bottom 1s, text-shadow 1s;
+		
+
 
 		&:hover {
 			color: #47a992;
 			border-bottom: 0.2rem solid #47a992;
+			text-shadow: 0 0 20px #0071e2;
 		}
 	}
 
@@ -73,6 +100,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 1rem;
+	padding: 5rem;
 
 	&--disabled {
 		display: none;
@@ -149,7 +177,11 @@
 	flex-direction: row;
 	height: 100vh;
 	gap: 2rem;
-	background-color: red;
+	// background-color: red;
+	background-image: url('../Svg/layered-peaks-haikei.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 
 	&__data {
 		width: 300px;
