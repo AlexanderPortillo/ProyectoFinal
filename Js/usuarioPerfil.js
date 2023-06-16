@@ -41,15 +41,27 @@ function mostrarUsuario(elemento) {
 	contenedor.innerHTML = '';
 
 	const plantilla = `
-        <label>Nombre de usuario:</label>
-        <span>${elemento.nombreUsuario}</span><br>
-        <label>Nombre completo:</label>
-        <span>${elemento.nombreCompleto}</span><br>
-        <label>Correo electrónico:</label>
-        <span>${elemento.correoElectronico}</span><br>
-        <label>Contraseña:</label>
-        <span>${elemento.contraseña}</span><br>
-        <button onclick="actualizarPerfil('${elemento.nombreUsuario}')">Actualizar</button>
+		<label class="user__label">
+			<h4 class="user__profile--title">Nombre de usuario</h4>
+			<span class="user__profile--data">${elemento.nombreUsuario}</span>
+		</label>
+
+		<label class="user__label">
+			<h4 class="user__profile--title">Nombre completo</h4>
+			<span class="user__profile--data">${elemento.nombreCompleto}</span>
+		</label>
+
+		<label class="user__label">
+			<h4 class="user__profile--title">Correo electronico</h4>
+			<span class="user__profile--data">${elemento.correoElectronico}</span>
+		</label>
+
+		<label class="user__label">
+			<h4 class="user__profile--title">Contraseña</h4>
+			<span class="user__profile--data">${elemento.contraseña}</span>
+		</label>
+
+		<button onclick="actualizarPerfil('${elemento.nombreUsuario}')" class="user__profile--btn">Actualizar</button>
     `;
 
 	contenedor.innerHTML = plantilla;
@@ -66,11 +78,12 @@ function actualizarPerfil(nombreUsuario) {
 		let nuevoNombreCompleto = prompt('Ingrese el nuevo nombre completo:');
 		let nuevoCorreoElectronico = prompt('Ingrese el nuevo correo electrónico:');
 		let nuevaContraseña = prompt('Ingrese la nueva contraseña:');
+		let confirmarNuevaContraseña = prompt('Repita la contraseña: ');
 
 		elemento.nombreCompleto = nuevoNombreCompleto || elemento.nombreCompleto;
 		elemento.correoElectronico = nuevoCorreoElectronico || elemento.correoElectronico;
 		elemento.contraseña = nuevaContraseña || elemento.contraseña;
-		elemento.confirmarContraseña = elemento.contraseña || nuevaContraseña;
+		elemento.confirmarContraseña = confirmarNuevaContraseña;
 
 		localStorage.setItem('usuario', JSON.stringify(elementos));
 
