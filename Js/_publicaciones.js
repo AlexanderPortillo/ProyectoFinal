@@ -29,7 +29,7 @@ export const cargarPost = () => {
             `;
 			/********************************************************************************************** */
 			const CajaComentario = `
-            <div class="publications__box"> 
+            <div class="publications__box">
 				<h2>Comentarios</h2>
 				<div class="content">
 				<div class="comments-list-approved"></div>

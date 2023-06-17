@@ -6,6 +6,9 @@ export const crearPost = (e) => {
 
 	const elementos = JSON.parse(localStorage.getItem('post')) || [];
 
+	// Verificar si el elemento ya existe
+	const elementosGuardados = elementos;
+
 	const validarUrl = /^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/;
 	const validarTitulo = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
 	const validarDescripcion = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
@@ -28,12 +31,36 @@ export const crearPost = (e) => {
 		return;
 	}
 
+	const ExisteUrl = elementosGuardados.find((elemento) => elemento.url === datos.url);
+	if (ExisteUrl) {
+		const UrlRepetida = document.querySelector('.post__repeatUrl--error');
+		UrlRepetida.classList.remove('post--disabled');
+
+		formulario.url.value = '';
+		setTimeout(function () {
+			UrlRepetida.classList.add('post--disabled');
+		}, tiempo);
+		return;
+	}
+
 	if (!validarTitulo.test(datos.titulo)) {
 		const errorTitulo = document.querySelector('.post__title--error');
 		errorTitulo.classList.remove('post--disabled');
 
 		setTimeout(function () {
 			errorTitulo.classList.add('post--disabled');
+		}, tiempo);
+		return;
+	}
+
+	const ExisteTitulo = elementosGuardados.find((elemento) => elemento.titulo === datos.titulo);
+	if (ExisteTitulo) {
+		const tituloRepetido = document.querySelector('.post__repeatTitle--error');
+		tituloRepetido.classList.remove('post--disabled');
+
+		formulario.title.value = '';
+		setTimeout(function () {
+			tituloRepetido.classList.add('post--disabled');
 		}, tiempo);
 		return;
 	}
@@ -58,67 +85,22 @@ export const crearPost = (e) => {
 		return;
 	}
 
-	if (localStorage.getItem('post') === null) {
-		formulario.url.value = '';
-		formulario.title.value = '';
-		formulario.date.value = '';
-		formulario.description.value = '';
+	formulario.url.value = '';
+	formulario.title.value = '';
+	formulario.date.value = '';
+	formulario.description.value = '';
 
-		elementos.push(datos);
-		localStorage.setItem('post', JSON.stringify(elementos));
+	elementos.push(datos);
+	localStorage.setItem('post', JSON.stringify(elementos));
 
-		let mensaje = document.getElementById('post__button');
+	let mensaje = document.getElementById('post__button');
+	mensaje.style.color = 'white';
+	mensaje.style.fontSize = '1rem';
+	mensaje.textContent = 'Se enviaron los datos';
+
+	setTimeout(function () {
 		mensaje.style.color = 'white';
 		mensaje.style.fontSize = '1rem';
-		mensaje.textContent = 'Se enviaron los datos';
-
-		setTimeout(function () {
-			mensaje.style.color = 'white';
-			mensaje.style.fontSize = '1rem';
-			mensaje.textContent = 'Crear nueva publicacion';
-		}, tiempo);
-	} else {
-		elementos.forEach((element) => {
-			if (element.url === datos.url) {
-				const UrlRepetida = document.querySelector('.post__repeatUrl--error');
-				UrlRepetida.classList.remove('post--disabled');
-
-				formulario.url.value = '';
-				setTimeout(function () {
-					UrlRepetida.classList.add('post--disabled');
-				}, tiempo);
-				return;
-			} else {
-				if (element.titulo === datos.titulo) {
-					const tituloRepetido = document.querySelector('.post__repeatTitle--error');
-					tituloRepetido.classList.remove('post--disabled');
-
-					formulario.title.value = '';
-					setTimeout(function () {
-						tituloRepetido.classList.add('post--disabled');
-					}, tiempo);
-					return;
-				} else {
-					formulario.url.value = '';
-					formulario.title.value = '';
-					formulario.date.value = '';
-					formulario.description.value = '';
-
-					elementos.push(datos);
-					localStorage.setItem('post', JSON.stringify(elementos));
-
-					let mensaje = document.getElementById('post__button');
-					mensaje.style.color = 'white';
-					mensaje.style.fontSize = '1rem';
-					mensaje.textContent = 'Se enviaron los datos';
-
-					setTimeout(function () {
-						mensaje.style.fontSize = '1rem';
-						mensaje.style.color = 'white';
-						mensaje.textContent = 'Crear nueva publicacion';
-					}, tiempo);
-				}
-			}
-		});
-	}
+		mensaje.textContent = 'Crear nueva publicacion';
+	}, tiempo);
 };

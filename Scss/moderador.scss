@@ -34,9 +34,6 @@
 		font-size: 1.7rem !important;
 	}
 
-	&__li {
-	}
-
 	&__item {
 		font-size: 1.5rem;
 		color: #0071e2a6;
@@ -341,12 +338,11 @@ form {
 }
 
 // !pagina para ver la lista de post (Jesse)
-.containerPublications {
+.containerPublicationsNav {
 	background-image: url('../Svg/layered-haikei.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 100vh;
 }
 
 .publications {
@@ -386,7 +382,6 @@ form {
 		height: 150px;
 		//border: 0.1rem solid white;
 		border-radius: 1rem;
-		
 
 		img {
 			width: 100%;
@@ -436,13 +431,14 @@ form {
 	height: 100vh;
 }
 
-.comments-list{
-	.approve-button, .delete-button {
+.comments-list {
+	.approve-button,
+	.delete-button {
 		background-color: #333;
 		color: #fff;
 		border: none;
 		padding: 5px 10px;
 		margin-left: 10px;
 		cursor: pointer;
-	  }
+	}
 }

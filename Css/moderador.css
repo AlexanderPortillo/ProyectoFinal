@@ -277,12 +277,11 @@ form {
   background-color: #1f6662;
 }
 
-.containerPublications {
+.containerPublicationsNav {
   background-image: url("../Svg/layered-haikei.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
 }
 
 .publications {
@@ -359,7 +358,8 @@ form {
   height: 100vh;
 }
 
-.comments-list .approve-button, .comments-list .delete-button {
+.comments-list .approve-button,
+.comments-list .delete-button {
   background-color: #333;
   color: #fff;
   border: none;
