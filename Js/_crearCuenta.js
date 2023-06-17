@@ -5,9 +5,13 @@ export const crearCuenta = (e) => {
 	e.preventDefault();
 
 	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
+	const elementosGuardados = elementos;
+	const moderador = 'AlexPor';
 
-	const expresionRegularUsuario = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
-	const expresionRegularNombre = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
+	const expresionRegularUsuario =
+		/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
+	const expresionRegularNombre =
+		/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
 	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 	const expresionRegularContraseña = /^(?=.*.{8,})[A-Za-z0-9#"$@/!*-]+$/;
 
@@ -30,6 +34,22 @@ export const crearCuenta = (e) => {
 			formulario.user.classList.remove('sign--error');
 			errorNombreUsuario.classList.add('sign--disabled');
 		}, tiempo);
+		return;
+	}
+
+	const ExisteUsuario = elementosGuardados.find(
+		(elemento) => elemento.nombreUsuario === datos.nombreUsuario
+	);
+	if (ExisteUsuario) {
+		const usuarioEnUso = document.querySelector('.sign__user--reload');
+
+		usuarioEnUso.classList.remove('sign--disabled');
+
+		setTimeout(function () {
+			usuarioEnUso.classList.add('sign--disabled');
+		}, tiempo);
+
+		formulario.user.value = '';
 		return;
 	}
 
@@ -56,6 +76,21 @@ export const crearCuenta = (e) => {
 			formulario.email.classList.remove('sign--error');
 			errorEmail.classList.add('sign--disabled');
 		}, tiempo);
+		return;
+	}
+
+	const ExisteCorreo = elementosGuardados.find(
+		(elemento) => elemento.correoElectronico === datos.correoElectronico
+	);
+	if (ExisteCorreo) {
+		const correoEnUso = document.querySelector('.sign__email--reload');
+
+		correoEnUso.classList.remove('sign--disabled');
+
+		setTimeout(function () {
+			correoEnUso.classList.add('sign--disabled');
+		}, tiempo);
+		formulario.email.value = '';
 		return;
 	}
 
@@ -98,8 +133,6 @@ export const crearCuenta = (e) => {
 		return;
 	}
 
-	const moderador = 'AlexPor';
-
 	if (moderador === datos.nombreUsuario || datos.nombreUsuario === 'alexpor') {
 		const usuarioEnUso = document.querySelector('.sign__user--reload');
 
@@ -111,65 +144,25 @@ export const crearCuenta = (e) => {
 
 		formulario.user.value = '';
 	} else {
-		if (localStorage.getItem('usuario') === null) {
-			formulario.user.value = '';
-			formulario.fullName.value = '';
-			formulario.email.value = '';
-			formulario.password.value = '';
-			formulario.repeatPassword.value = '';
-			formulario['terms-services'].checked = false;
+		formulario.user.value = '';
+		formulario.fullName.value = '';
+		formulario.email.value = '';
+		formulario.password.value = '';
+		formulario.repeatPassword.value = '';
+		formulario['terms-services'].checked = false;
 
-			elementos.push(datos);
-			localStorage.setItem('usuario', JSON.stringify(elementos));
+		elementos.push(datos);
+		localStorage.setItem('usuario', JSON.stringify(elementos));
 
-			let mensaje = document.getElementById('sign__button-submit');
-			mensaje.textContent = 'Se registro exitosamente';
+		let mensaje = document.getElementById('sign__button-submit');
+		mensaje.style.color = 'white';
+		mensaje.style.fontSize = '1rem';
+		mensaje.textContent = 'Se registro exitosamente';
 
-			setTimeout(function () {
-				mensaje.textContent = 'Crear cuenta';
-			}, tiempo);
-		} else {
-			elementos.forEach((element) => {
-				if (element.nombreUsuario === datos.nombreUsuario) {
-					const usuarioEnUso = document.querySelector('.sign__user--reload');
-
-					usuarioEnUso.classList.remove('sign--disabled');
-
-					setTimeout(function () {
-						usuarioEnUso.classList.add('sign--disabled');
-					}, tiempo);
-
-					formulario.user.value = '';
-				} else {
-					if (element.correoElectronico === datos.correoElectronico) {
-						const correoEnUso = document.querySelector('.sign__email--reload');
-
-						correoEnUso.classList.remove('sign--disabled');
-
-						setTimeout(function () {
-							correoEnUso.classList.add('sign--disabled');
-						}, tiempo);
-						formulario.email.value = '';
-					} else {
-						formulario.user.value = '';
-						formulario.fullName.value = '';
-						formulario.email.value = '';
-						formulario.password.value = '';
-						formulario.repeatPassword.value = '';
-						formulario['terms-services'].checked = false;
-
-						elementos.push(datos);
-						localStorage.setItem('usuario', JSON.stringify(elementos));
-
-						let mensaje = document.getElementById('sign__button-submit');
-						mensaje.textContent = 'Se registro exitosamente';
-
-						setTimeout(function () {
-							mensaje.textContent = 'Crear cuenta';
-						}, tiempo);
-					}
-				}
-			});
-		}
+		setTimeout(function () {
+			mensaje.style.color = 'white';
+			mensaje.style.fontSize = '1rem';
+			mensaje.textContent = 'Crear cuenta';
+		}, tiempo);
 	}
 };

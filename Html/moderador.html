@@ -23,7 +23,7 @@
         <div class="navbar">
             <ul class="navbar__ul">
                 <li class="navbar__li">
-                    <a href="moderador.html" class="navbar__item">Crear publicacion o usuario</a>
+                    <a href="moderador.html" class="navbar__item navbar--active">Crear publicacion o usuario</a>
                 </li>
 
                 <li class="navbar__li">
@@ -75,7 +75,8 @@
                         <div class="post__input">
                             <label for="description">
                                 <span class="post__description">Descripcion de la pelicula</span>
-                                <textarea maxlength="200" name="" id="description" cols="20" rows="3"></textarea>
+                                <textarea minlength="100" maxlength="200" name="" id="description" cols="20"
+                                    rows="3"></textarea>
                                 <span class="post__description--error post--disabled">Ingrese una descripcion
                                     valida</span>
                             </label>
