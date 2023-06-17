@@ -41,7 +41,7 @@
 
 .nav {
 	width: 100%;
-	 background-color: #dbe0e5;
+	background-color: #dbe0e5;
 	// background-image: url('../Svg/layered-peaks-haikei.svg');
 	box-shadow: 0 0 10px black;
 	padding: 1.5rem;
@@ -100,7 +100,6 @@
 	flex-wrap: wrap;
 	gap: 1rem;
 	padding: 5rem;
-	
 
 	&--disabled {
 		display: none;
@@ -108,7 +107,7 @@
 
 	&__content {
 		font-size: 3rem;
-		color: black	;
+		color: black;
 		font-weight: bold;
 		text-align: center;
 		text-shadow: 0 0 0.4rem black;
@@ -180,39 +179,38 @@
 		margin: -15px;
 	}
 
-	h2{
+	h2 {
 		text-align: center;
 		padding: 10px;
 	}
-	
+
 	/*******************************************************/
 }
 
-.content{
+.content {
 	width: 370px; /* Tamaño del contenedor */
-  	height: 200px; /* Tamaño del contenedor */
-  	overflow: auto;
+	height: 200px; /* Tamaño del contenedor */
+	overflow: auto;
 	margin-bottom: 10px;
 }
 
 .comentarios {
-	
 	background-color: #dfcdcd80;
 	padding: 10px;
 	margin-bottom: 10px;
 
-	&__form{
+	&__form {
 		margin-bottom: 20px;
 	}
 
-	&__text{
+	&__text {
 		width: 370px;
 		height: 100px;
 		padding: 5px;
 		resize: none;
 	}
 
-	&__submit{
+	&__submit {
 		background-color: #333;
 		color: #fff;
 		border: none;
@@ -220,7 +218,7 @@
 		cursor: pointer;
 	}
 
-	&__message{
+	&__message {
 		color: green;
 	}
 }

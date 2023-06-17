@@ -69,56 +69,58 @@ function mostrarUsuario(elemento) {
 
 function actualizarPerfil(nombreUsuario) {
 	let elementos = JSON.parse(localStorage.getItem('usuario')) || [];
-  
+
 	let elemento = elementos.find(function (element) {
-	  return element.nombreUsuario === nombreUsuario;
+		return element.nombreUsuario === nombreUsuario;
 	});
-  
+
 	if (elemento) {
-	  const nombreRegex = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
-	  const correoRegex = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-	  const contraseñaRegex = /^(?=.*.{8,})[A-Za-z0-9#"$@/!*-]+$/;
-  
-	  let nuevoNombreCompleto = prompt('Ingrese el nuevo nombre completo:');
-	  while (nuevoNombreCompleto && !nombreRegex.test(nuevoNombreCompleto)) {
-		nuevoNombreCompleto = prompt('El nombre no cumple con los caracteres requeridos. Ingrese el nuevo nombre completo:');
-	  }
-	  if (nuevoNombreCompleto) {
-		elemento.nombreCompleto = nuevoNombreCompleto;
-	  }
-  
-	  let nuevoCorreoElectronico = prompt('Ingrese el nuevo correo electrónico:');
-	  if (nuevoCorreoElectronico && !correoRegex.test(nuevoCorreoElectronico)) {
-		nuevoCorreoElectronico = prompt('El correo electrónico no es válido. Ingrese el nuevo correo electrónico:');
-	  }
-	  if (nuevoCorreoElectronico) {
-		elemento.correoElectronico = nuevoCorreoElectronico;
-	  }
-  
-	  let nuevaContraseña = prompt('Ingrese la nueva contraseña:');
-	  if (nuevaContraseña && !contraseñaRegex.test(nuevaContraseña)) {
-		nuevaContraseña = prompt('La contraseña no cumple con los caracteres requeridos. Ingrese la nueva contraseña:');
-	  }
-	  if (nuevaContraseña) {
-		elemento.contraseña = nuevaContraseña;
-	  }
-  
-	  let confirmarNuevaContraseña = prompt('Repita la contraseña: ');
-	  if (confirmarNuevaContraseña !== nuevaContraseña) {
-		confirmarNuevaContraseña = prompt('Las contraseñas no coinciden. Repita la contraseña:');
-	  }
-	  if (confirmarNuevaContraseña) {
-		elemento.confirmarContraseña = confirmarNuevaContraseña;
-	  }
-  
-	  localStorage.setItem('usuario', JSON.stringify(elementos));
-  
-	  mostrarUsuario(elemento);
+		const expresionRegularNombre =
+			/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
+		const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+		const expresionRegularContraseña = /^(?=.*.{8,})[A-Za-z0-9#"$@/!*-]+$/;
+
+		let nuevoNombreCompleto = prompt('Ingrese el nuevo nombre completo:');
+		while (nuevoNombreCompleto && !expresionRegularNombre.test(nuevoNombreCompleto)) {
+			nuevoNombreCompleto = prompt(
+				'El nombre no cumple con los caracteres requeridos. Ingrese el nuevo nombre completo:'
+			);
+		}
+
+		if (nuevoNombreCompleto) {
+			elemento.nombreCompleto = nuevoNombreCompleto;
+		}
+
+		let nuevoCorreoElectronico = prompt('Ingrese el nuevo correo electrónico:');
+		if (nuevoCorreoElectronico && !expresionRegularCorreo.test(nuevoCorreoElectronico)) {
+			nuevoCorreoElectronico = prompt(
+				'El correo electrónico no es válido. Ingrese el nuevo correo electrónico:'
+			);
+		}
+		if (nuevoCorreoElectronico) {
+			elemento.correoElectronico = nuevoCorreoElectronico;
+		}
+
+		let nuevaContraseña = prompt('Ingrese la nueva contraseña:');
+		if (nuevaContraseña && !expresionRegularContraseña.test(nuevaContraseña)) {
+			nuevaContraseña = prompt(
+				'La contraseña no cumple con los caracteres requeridos. Ingrese la nueva contraseña:'
+			);
+		}
+		if (nuevaContraseña) {
+			elemento.contraseña = nuevaContraseña;
+		}
+
+		let confirmarNuevaContraseña = prompt('Repita la contraseña: ');
+		if (confirmarNuevaContraseña !== nuevaContraseña) {
+			confirmarNuevaContraseña = prompt('Las contraseñas no coinciden. Repita la contraseña:');
+		}
+		if (confirmarNuevaContraseña) {
+			elemento.confirmarContraseña = confirmarNuevaContraseña;
+		}
+
+		localStorage.setItem('usuario', JSON.stringify(elementos));
+
+		mostrarUsuario(elemento);
 	}
-  }
-  
-  
-  
-  
-  
-  
+}
