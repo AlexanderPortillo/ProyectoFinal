@@ -93,43 +93,50 @@ function actualizarPerfil(nombreUsuario) {
 
 		let nuevoCorreoElectronico = prompt('Ingrese el nuevo correo electrónico:');
 		if (nuevoCorreoElectronico && !expresionRegularCorreo.test(nuevoCorreoElectronico)) {
-			nuevoCorreoElectronico = prompt(
-			  'El correo electrónico no es válido. Ingrese el nuevo correo electrónico:'
-			);
-		  }
-		  
-		  if (nuevoCorreoElectronico) {
-			const correoExistente = elementos.find(function (element) {
-			  return element.correoElectronico === nuevoCorreoElectronico;
-			});
-		  
-			if (correoExistente) {
-			  nuevoCorreoElectronico = prompt(
-				'El correo electrónico ingresado ya existe. Ingrese un nuevo correo electrónico:'
-			  );
+		nuevoCorreoElectronico = prompt('El correo electrónico no es válido. Ingrese el nuevo correo electrónico:');
+		}
+
+		if (nuevoCorreoElectronico !== '') {
+		const correoExistente = elementos.find(function(element) {
+			return element.correoElectronico === nuevoCorreoElectronico;
+		});
+
+		if (correoExistente) {
+			const confirmacion = confirm('El correo electrónico ingresado ya existe. ¿Desea mantener el correo actual?');
+			if (confirmacion) {
+			nuevoCorreoElectronico = correoExistente.correoElectronico; // Mantener el correo existente
+			} else {
+			nuevoCorreoElectronico = prompt('Ingrese un nuevo correo electrónico:');
 			}
-		  
+		}
+
+		if (nuevoCorreoElectronico !== null) {
 			elemento.correoElectronico = nuevoCorreoElectronico;
-		  }
-		  
+		}
+		}
+
+
 
 		let nuevaContraseña = prompt('Ingrese la nueva contraseña:');
-		if (nuevaContraseña && !expresionRegularContraseña.test(nuevaContraseña)) {
+		while (nuevaContraseña !== null && nuevaContraseña !== '' && !expresionRegularContraseña.test(nuevaContraseña)) {
 			nuevaContraseña = prompt(
 				'La contraseña no cumple con los caracteres requeridos. Ingrese la nueva contraseña:'
 			);
 		}
-		if (nuevaContraseña) {
-			elemento.contraseña = nuevaContraseña;
+
+		if (nuevaContraseña !== null) {
+			let confirmarNuevaContraseña = prompt('Repita la contraseña:');
+
+			while (confirmarNuevaContraseña !== null && confirmarNuevaContraseña !== nuevaContraseña) {
+				confirmarNuevaContraseña = prompt('Las contraseñas no coinciden. Repita la contraseña:');
+			}
+
+			if (confirmarNuevaContraseña !== null) {
+				elemento.contraseña = nuevaContraseña !== '' ? nuevaContraseña : elemento.contraseña;
+				elemento.confirmarContraseña = confirmarNuevaContraseña;
+			}
 		}
 
-		let confirmarNuevaContraseña = prompt('Repita la contraseña: ');
-		if (confirmarNuevaContraseña !== nuevaContraseña) {
-			confirmarNuevaContraseña = prompt('Las contraseñas no coinciden. Repita la contraseña:');
-		}
-		if (confirmarNuevaContraseña) {
-			elemento.confirmarContraseña = confirmarNuevaContraseña;
-		}
 
 		localStorage.setItem('usuario', JSON.stringify(elementos));
 
