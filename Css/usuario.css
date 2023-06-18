@@ -153,6 +153,7 @@
 .user__container {
   width: 500px;
   background-color: #42414d;
+  padding: 0.2rem 0.6rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem #15273f;
   border: 0.2rem solid transparent;
