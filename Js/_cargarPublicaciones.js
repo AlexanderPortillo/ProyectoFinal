@@ -9,7 +9,6 @@ export const cargarPost = () => {
 	if (localStorage.getItem('post') === null) {
 		mensaje.classList.remove('publications--disabled');
 	} else {
-
 		cargar.forEach((element, i) => {
 			const plantilla = `
                 <div class="publications__card">
@@ -81,26 +80,53 @@ function mostrarAlertaActualizacion() {
 
 	// Validación de la URL
 	nuevosDatos.url = prompt('Ingrese una nueva URL (deje vacío para mantener la actual): ');
-	while (nuevosDatos.url && !/^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/.test(nuevosDatos.url)) {
-		nuevosDatos.url = prompt('URL inválida. Ingrese una nueva URL válida o deje vacío para mantener la actual: ');
+	while (
+		nuevosDatos.url &&
+		!/^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/.test(
+			nuevosDatos.url
+		)
+	) {
+		nuevosDatos.url = prompt(
+			'URL inválida. Ingrese una nueva URL válida o deje vacío para mantener la actual: '
+		);
 	}
 
 	// Validación del título
-	nuevosDatos.titulo = prompt('Ingrese un nuevo título (deje vacío para mantener el actual): ');
-	while (nuevosDatos.titulo && !/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/.test(nuevosDatos.titulo)) {
-		nuevosDatos.titulo = prompt('Título inválido. Ingrese un nuevo título válido o deje vacío para mantener el actual: ');
+	nuevosDatos.titulo = prompt(
+		'Ingrese un nuevo título (deje vacío para mantener el actual): '
+	);
+	while (
+		nuevosDatos.titulo &&
+		!/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/.test(
+			nuevosDatos.titulo
+		)
+	) {
+		nuevosDatos.titulo = prompt(
+			'Título inválido. Ingrese un nuevo título válido o deje vacío para mantener el actual: '
+		);
 	}
 
 	// Validación de la descripción
-	nuevosDatos.descripcion = prompt('Ingrese una nueva descripción (deje vacío para mantener la actual): ');
-	while (nuevosDatos.descripcion && !/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/.test(nuevosDatos.descripcion)) {
-		nuevosDatos.descripcion = prompt('Descripción inválida. Ingrese una nueva descripción válida o deje vacío para mantener la actual: ');
+	nuevosDatos.descripcion = prompt(
+		'Ingrese una nueva descripción (deje vacío para mantener la actual): '
+	);
+	while (
+		nuevosDatos.descripcion &&
+		!/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/.test(
+			nuevosDatos.descripcion
+		)
+	) {
+		nuevosDatos.descripcion = prompt(
+			'Descripción inválida. Ingrese una nueva descripción válida o deje vacío para mantener la actual: '
+		);
 	}
 
 	// Validación de la fecha
 	nuevosDatos.fecha = prompt('Ingrese una nueva fecha (deje vacío para mantener la actual): ');
 	while (nuevosDatos.fecha && !/^\d{4}-\d{2}-\d{2}$/.test(nuevosDatos.fecha)) {
-		nuevosDatos.fecha = prompt('Fecha inválida. Ingrese una nueva fecha válida (formato: AAAA-MM-DD) o deje vacío para mantener la actual: ');
+		nuevosDatos.fecha = prompt(
+			'Fecha inválida. Ingrese una nueva fecha válida (formato: AAAA-MM-DD) o deje vacío para mantener la actual: '
+		);
 	}
 
 	return nuevosDatos;

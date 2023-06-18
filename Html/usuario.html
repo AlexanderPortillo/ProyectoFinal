@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ! Icon -->
     <link rel="icon" href="">
+    <!-- ! Font Awesome -->
+    <script src="https://kit.fontawesome.com/627b2b4bd2.js" defer crossorigin="anonymous"></script>
     <!-- ! List style -->
     <link rel="stylesheet" href="../Css/usuario.css">
     <!-- ! JavaScript -->
-    <script src="../Js/" type="module" defer></script>
+    <script src="../Js/busqueda.js" defer></script>
+
     <title>Usuario</title>
 </head>
 
@@ -19,9 +22,7 @@
         <div class="nav">
             <ul class="nav__ul">
                 <li class="nav__li">
-                    <input type="search" id="inputBuscarPublicacion" placeholder="Buscar por título">
-                    <button id="btnBuscar" class="nav__li-item--btn">Buscar</button>
-
+                    <a href="usuario.html" class="nav__li-item">Buscar Publicaciones</a>
                 </li>
 
                 <li class="nav__li">
@@ -38,24 +39,36 @@
             </ul>
         </div>
 
-        <div class="publications">
-            <!-- <div class="publications__card">
-                <div class="publications__img">
-                    <img src="../Img/iniciosesion.jpg" alt="prueba">
+        <div class="user__search">
+            <form action="#" class="user__form">
+                <div class="user__container">
+                    <i class="fas fa-search"></i>
+                    <input type="search" name="" id="search" placeholder="Ingrese el nombre de la publicacion">
                 </div>
+                <button class="user__btn--search" id="user__btn-search">Buscar</button>
+            </form>
 
-                <h3 class="publications__title">Equilibrium #3429</h3>
+            <div class="publication">
+                <!-- <div class="publications__card">
+                    <div class="publications__img">
+                        <img src="../Img/iniciosesion.jpg" alt="prueba">
+                    </div>
 
-                <p class="publications__text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis ipsa eaque quod inventore quasi
-                    odio vel tempore labore soluta quae nulla beatae ipsum, consequuntur odit, aliquam culpa delectus
-                    doloribus obcaecati.
-                </p>
+                    <h3 class="publications__title">Equilibrium #3429</h3>
 
-                <span class="publications__date">sep 10-12-2022</span>
+                    <p class="publications__text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis ipsa eaque quod inventore
+                        quasi
+                        odio vel tempore labore soluta quae nulla beatae ipsum, consequuntur odit, aliquam culpa
+                        delectus
+                        doloribus obcaecati.
+                    </p>
 
-                <hr class="publications__hr">
-            </div> -->
+                    <span class="publications__date">sep 10-12-2022</span>
+
+                    <hr class="publications__hr">
+                </div> -->
+            </div>
         </div>
     </div>
 </body>

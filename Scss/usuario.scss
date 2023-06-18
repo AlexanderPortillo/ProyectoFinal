@@ -92,6 +92,65 @@
 	}
 }
 
+.user {
+	&__search {
+		width: 100%;
+		position: absolute;
+		top: 15%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	&__container {
+		width: 500px;
+		background-color: #42414d;
+		padding: 0.6rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 0 0.5rem #15273f;
+		border: 0.2rem solid transparent;
+
+		&:focus-within {
+			border: 0.2rem solid #0df6ee;
+		}
+
+		i {
+			font-size: 1.5rem;
+			color: #7f93b4;
+		}
+
+		input {
+			width: 90%;
+			padding: 0.5rem;
+			outline: none;
+			background-color: transparent;
+			border: none;
+			color: #a6a5ad;
+			font-size: 1.2rem;
+		}
+	}
+
+	&__btn--search {
+		padding: 0.8rem 1.5rem;
+		background-color: #0b1629;
+		color: #7f93b4;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow: 0 0 0.5rem #0071e2;
+	}
+}
+
 .publications {
 	display: flex;
 	flex-direction: row;
@@ -158,6 +217,26 @@
 	&__hr {
 		border: none;
 		border-bottom: 0.1rem solid #7f93b4;
+	}
+
+	&__creator {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 1rem;
+		color: #7f93b4;
+	}
+
+	&__span {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+
+	&__logo {
+		border: 0.1rem solid;
+		padding: 0.7rem 0.3rem;
+		border-radius: 50%;
 	}
 
 	&__buttons {
@@ -239,10 +318,14 @@
 	&__data {
 		width: 300px;
 		height: 280px;
-		border: 1px solid #0b1629;
 		padding: 0.8rem;
 		border-radius: 0.5rem;
-		backdrop-filter: blur(2rem);
+		background-color: #0071e2;
+		transition: box-shadow 2s;
+
+		&:focus-within {
+			box-shadow: 0 0 0.8rem #0b1629;
+		}
 	}
 
 	&__title {
@@ -314,13 +397,13 @@
 	&__profile {
 		width: 300px;
 		height: 300px;
-		border: 0.1rem solid;
 		border-radius: 0.5rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		padding: 1rem;
-		backdrop-filter: blur(2rem);
+		background-color: #0071e2;
+		box-shadow: 0 0 0.5rem #0b1629;
 	}
 
 	&__label {

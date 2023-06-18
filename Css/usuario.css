@@ -84,6 +84,57 @@
   background-color: #2b2a33;
 }
 
+.user__search {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.user__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.user__container {
+  width: 500px;
+  background-color: #42414d;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem #15273f;
+  border: 0.2rem solid transparent;
+}
+.user__container:focus-within {
+  border: 0.2rem solid #0df6ee;
+}
+.user__container i {
+  font-size: 1.5rem;
+  color: #7f93b4;
+}
+.user__container input {
+  width: 90%;
+  padding: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: #a6a5ad;
+  font-size: 1.2rem;
+}
+.user__btn--search {
+  padding: 0.8rem 1.5rem;
+  background-color: #0b1629;
+  color: #7f93b4;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem #0071e2;
+}
+
 .publications {
   display: flex;
   flex-direction: row;
@@ -144,6 +195,23 @@
 .publications__hr {
   border: none;
   border-bottom: 0.1rem solid #7f93b4;
+}
+.publications__creator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  color: #7f93b4;
+}
+.publications__span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.publications__logo {
+  border: 0.1rem solid;
+  padding: 0.7rem 0.3rem;
+  border-radius: 50%;
 }
 .publications__buttons {
   display: flex;
@@ -213,10 +281,13 @@
 .user__data {
   width: 300px;
   height: 280px;
-  border: 1px solid #0b1629;
   padding: 0.8rem;
   border-radius: 0.5rem;
-  backdrop-filter: blur(2rem);
+  background-color: #0071e2;
+  transition: box-shadow 2s;
+}
+.user__data:focus-within {
+  box-shadow: 0 0 0.8rem #0b1629;
 }
 .user__title {
   text-align: center;
@@ -278,13 +349,13 @@
 .user__profile {
   width: 300px;
   height: 300px;
-  border: 0.1rem solid;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  backdrop-filter: blur(2rem);
+  background-color: #0071e2;
+  box-shadow: 0 0 0.5rem #0b1629;
 }
 .user__label {
   color: #0b1629;

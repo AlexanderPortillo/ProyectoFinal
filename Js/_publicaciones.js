@@ -25,6 +25,14 @@ export const cargarPost = () => {
                     <span class="publications__date">${element.fecha}</span>
 
                     <hr class="publications__hr">
+
+					<div class="publications__creator">
+						<span class="publications__span">
+							<span class="publications__logo">logo</span>
+							<span class="publications__text">AlexPor</span>
+						</span>
+						<span class="publications__time">102728</span>
+					</div>
                 </div>
             `;
 			/********************************************************************************************** */
