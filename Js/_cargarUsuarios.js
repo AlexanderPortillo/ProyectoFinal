@@ -66,72 +66,99 @@ function actualizarInterfaz() {
 }
 
 function mostrarAlertaActualizacion() {
-    const nuevosDatos = {};
-    const expresionRegularUsuario = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
-    const expresionRegularNombre = /^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
-    const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+	const nuevosDatos = {};
+	const expresionRegularUsuario =
+		/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
+	const expresionRegularNombre =
+		/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
+	const expresionRegularCorreo = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 
-    let nombreUsuario = prompt('Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)');
+	let nombreUsuario = prompt(
+		'Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)'
+	);
 
-    while (
-        nombreUsuario !== null && nombreUsuario !== '' && !expresionRegularUsuario.test(nombreUsuario)
-    ) {
-        alert('El nombre de usuario no cumple con el formato requerido');
-        nombreUsuario = prompt('Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)');
-    }
+	while (
+		nombreUsuario !== null &&
+		nombreUsuario !== '' &&
+		!expresionRegularUsuario.test(nombreUsuario)
+	) {
+		alert('El nombre de usuario no cumple con el formato requerido');
+		nombreUsuario = prompt(
+			'Ingrese el nuevo nombre de usuario (dejar en blanco para mantener el anterior)'
+		);
+	}
 
-    if (nombreUsuario !== null && nombreUsuario !== '') {
-        const usuarioExistente = cargar.find((element) => element.nombreUsuario === nombreUsuario);
+	if (nombreUsuario !== null && nombreUsuario !== '') {
+		const usuarioExistente = cargar.find((element) => element.nombreUsuario === nombreUsuario);
 
-        if (usuarioExistente) {
-            alert('El nombre de usuario ya existe. Ingrese un nombre de usuario diferente.');
-            return mostrarAlertaActualizacion();
-        }
+		if (usuarioExistente) {
+			alert('El nombre de usuario ya existe. Ingrese un nombre de usuario diferente.');
+			return mostrarAlertaActualizacion();
+		}
 
-        nuevosDatos.nombreUsuario = nombreUsuario;
-    }
+		nuevosDatos.nombreUsuario = nombreUsuario;
+	}
 
-    let nombreCompleto = prompt(
-        'Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)'
-    );
+	let nombreCompleto = prompt(
+		'Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)'
+	);
 
-    while (nombreCompleto !== null && nombreCompleto !== '' && !expresionRegularNombre.test(nombreCompleto)) {
-        alert('El nombre completo no cumple con el formato requerido');
-        nombreCompleto = prompt('Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)');
-    }
+	while (
+		nombreCompleto !== null &&
+		nombreCompleto !== '' &&
+		!expresionRegularNombre.test(nombreCompleto)
+	) {
+		alert('El nombre completo no cumple con el formato requerido');
+		nombreCompleto = prompt(
+			'Ingrese el nuevo nombre completo (dejar en blanco para mantener el anterior)'
+		);
+	}
 
-    if (nombreCompleto !== null && nombreCompleto !== '') {
-        nuevosDatos.nombreCompleto = nombreCompleto;
-    }
+	if (nombreCompleto !== null && nombreCompleto !== '') {
+		nuevosDatos.nombreCompleto = nombreCompleto;
+	}
 
-    let correoElectronico = prompt('Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)');
+	let correoElectronico = prompt(
+		'Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)'
+	);
 
-while (correoElectronico !== null && correoElectronico !== '' && !expresionRegularCorreo.test(correoElectronico)) {
-    alert('El correo electrónico no cumple con el formato requerido');
-    correoElectronico = prompt('Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)');
-}
+	while (
+		correoElectronico !== null &&
+		correoElectronico !== '' &&
+		!expresionRegularCorreo.test(correoElectronico)
+	) {
+		alert('El correo electrónico no cumple con el formato requerido');
+		correoElectronico = prompt(
+			'Ingrese el nuevo correo electrónico (dejar en blanco para mantener el anterior)'
+		);
+	}
 
-if (correoElectronico !== null && correoElectronico !== '') {
-    let correoExistente = cargar.find((element) => element.correoElectronico === correoElectronico);
+	if (correoElectronico !== null && correoElectronico !== '') {
+		let correoExistente = cargar.find(
+			(element) => element.correoElectronico === correoElectronico
+		);
 
-    while (correoExistente) {
-        alert('El correo electrónico ya existe. Ingrese un correo electrónico diferente.');
-        correoElectronico = prompt('Ingrese un nuevo correo electrónico (dejar en blanco para mantener el anterior)');
+		while (correoExistente) {
+			alert('El correo electrónico ya existe. Ingrese un correo electrónico diferente.');
+			correoElectronico = prompt(
+				'Ingrese un nuevo correo electrónico (dejar en blanco para mantener el anterior)'
+			);
 
-        if (correoElectronico === null || correoElectronico === '') {
-            break;
-        }
+			if (correoElectronico === null || correoElectronico === '') {
+				break;
+			}
 
-        correoExistente = cargar.find((element) => element.correoElectronico === correoElectronico);
-    }
+			correoExistente = cargar.find(
+				(element) => element.correoElectronico === correoElectronico
+			);
+		}
 
-    if (correoElectronico !== null && correoElectronico !== '') {
-        nuevosDatos.correoElectronico = correoElectronico;
-    }
-}
+		if (correoElectronico !== null && correoElectronico !== '') {
+			nuevosDatos.correoElectronico = correoElectronico;
+		}
+	}
 
-
-    return nuevosDatos;
+	return nuevosDatos;
 }
 
 function actualizarElemento(i, nuevosDatos) {
