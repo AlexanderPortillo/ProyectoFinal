@@ -1,3 +1,5 @@
+@use 'mixins';
+
 .disabled {
 	display: none !important;
 }
@@ -70,25 +72,7 @@
 	}
 
 	&__li-item--btn {
-		color: black;
-		border: 0.3rem solid;
-		font-size: 1rem;
-		padding: 0.3rem;
-		border-radius: 0.5rem;
-		background-color: orangered;
-		font-weight: bold;
-		box-shadow: 0 0 0.4rem black;
-
-		&:hover {
-			// background-color: #7f93b4;
-			background-color: black;
-			color: orangered;
-		}
-
-		&:active {
-			color: #47a992;
-			background-color: #2b2a33;
-		}
+		@include mixins.btn-close();
 	}
 }
 
@@ -201,17 +185,20 @@
 		color: #ffffff;
 		font-size: 1.2rem;
 		text-align: center;
+		cursor: progress;
 	}
 
 	&__text {
 		color: #7f93b4;
 		font-size: 1rem;
 		text-align: justify;
+		cursor: progress;
 	}
 
 	&__date {
 		color: #0df6ee;
 		font-weight: bold;
+		cursor: progress;
 	}
 
 	&__hr {
@@ -225,6 +212,7 @@
 		align-items: center;
 		font-size: 1rem;
 		color: #7f93b4;
+		cursor: progress;
 	}
 
 	&__span {

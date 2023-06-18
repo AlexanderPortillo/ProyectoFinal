@@ -42,6 +42,24 @@
   color: #0071e2;
   text-shadow: 0 0 20px #0071e2;
 }
+.navbar__li-item--btn {
+  color: black;
+  border: 0.3rem solid;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  background-color: orangered;
+  font-weight: bold;
+  box-shadow: 0 0 0.4rem black;
+}
+.navbar__li-item--btn:hover {
+  background-color: black;
+  color: orangered;
+}
+.navbar__li-item--btn:active {
+  color: #47a992;
+  background-color: #2b2a33;
+}
 
 .user-post {
   display: flex;
@@ -328,19 +346,30 @@ form {
   color: #ffffff;
   font-size: 1.2rem;
   text-align: center;
+  cursor: progress;
 }
 .publications__text {
   color: #7f93b4;
   font-size: 1rem;
   text-align: justify;
+  cursor: progress;
 }
 .publications__date {
   color: #0df6ee;
   font-weight: bold;
+  cursor: progress;
 }
 .publications__hr {
   border: none;
   border-bottom: 0.1rem solid #7f93b4;
+}
+.publications__creator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  color: #7f93b4;
+  cursor: progress;
 }
 .publications__buttons {
   display: flex;

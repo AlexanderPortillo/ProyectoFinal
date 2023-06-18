@@ -1,5 +1,6 @@
 const formulario = document.forms['form'];
 let tiempo = 2000;
+let administrador = 'AlexPor';
 
 export const crearPost = (e) => {
 	e.preventDefault();
@@ -9,9 +10,12 @@ export const crearPost = (e) => {
 	// Verificar si el elemento ya existe
 	const elementosGuardados = elementos;
 
-	const validarUrl = /^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/;
-	const validarTitulo = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
-	const validarDescripcion = /^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
+	const validarUrl =
+		/^https:\/\/github\.com\/[^\s/]+\/[^\s/]+\/blob\/main\/[^/?]+\.(jpg|jpeg|png|gif|bmp|svg)\?raw=true$/;
+	const validarTitulo =
+		/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
+	const validarDescripcion =
+		/^(?!.*\s\s)[A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+(?: [A-Za-z0-9#"$@!*%-_:;¿?={}¡ÁÉÍÓÚáéíóúÑñ]+)*$/u;
 
 	const datos = {
 		id: uuid.v4(),
@@ -19,6 +23,8 @@ export const crearPost = (e) => {
 		titulo: formulario.title.value,
 		fecha: formulario.date.value,
 		descripcion: formulario.description.value,
+		creador: administrador,
+		fechaCreacion: fechaDeCreacion(),
 	};
 
 	if (!validarUrl.test(datos.url)) {
@@ -104,3 +110,20 @@ export const crearPost = (e) => {
 		mensaje.textContent = 'Crear nueva publicacion';
 	}, tiempo);
 };
+
+function fechaDeCreacion() {
+	let fecha = new Date();
+
+	let opciones = {
+		dia: '2-digit',
+		mes: '2-digit',
+		año: 'numeric',
+		horas: '2-digit',
+		minutos: '2-digit',
+		segundos: '2-digit',
+		formato12: true,
+	};
+
+	let horaCreacion = fecha.toLocaleString('es-MX', opciones);
+	return horaCreacion;
+}

@@ -1,3 +1,5 @@
+@use 'mixins';
+
 * {
 	padding: 0;
 	margin: 0;
@@ -6,7 +8,6 @@
 	text-decoration: none;
 }
 
-// !barra de navegacion (Andres)
 .containerModerator {
 	background-image: url('../Svg/layered-peaks-haikei.svg');
 	background-repeat: no-repeat;
@@ -46,9 +47,12 @@
 			text-shadow: 0 0 20px #0071e2;
 		}
 	}
+
+	&__li-item--btn {
+		@include mixins.btn-close();
+	}
 }
 
-// *pagina crear post y usuarios (no tocar)
 .user-post {
 	display: flex;
 	justify-content: center;
@@ -278,7 +282,6 @@ form {
 	}
 }
 
-// *pagina para ver la lista de usuarios (no tocar)
 .containerUser {
 	background-image: url('../Svg/layered-peaks.svg');
 	background-repeat: no-repeat;
@@ -337,7 +340,6 @@ form {
 	}
 }
 
-// !pagina para ver la lista de post (Jesse)
 .containerPublicationsNav {
 	background-image: url('../Svg/layered-haikei.svg');
 	background-repeat: no-repeat;
@@ -380,7 +382,6 @@ form {
 	&__img {
 		width: 100%;
 		height: 150px;
-		//border: 0.1rem solid white;
 		border-radius: 1rem;
 
 		img {
@@ -395,22 +396,34 @@ form {
 		color: #ffffff;
 		font-size: 1.2rem;
 		text-align: center;
+		cursor: progress;
 	}
 
 	&__text {
 		color: #7f93b4;
 		font-size: 1rem;
 		text-align: justify;
+		cursor: progress;
 	}
 
 	&__date {
 		color: #0df6ee;
 		font-weight: bold;
+		cursor: progress;
 	}
 
 	&__hr {
 		border: none;
 		border-bottom: 0.1rem solid #7f93b4;
+	}
+
+	&__creator {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 1rem;
+		color: #7f93b4;
+		cursor: progress;
 	}
 
 	&__buttons {
@@ -422,7 +435,6 @@ form {
 	}
 }
 
-// !pagina para ver los comentarios y mas
 .containerComments {
 	background-image: url('../Svg/peaks-haikei.svg');
 	background-position: center;

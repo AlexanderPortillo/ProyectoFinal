@@ -14,3 +14,24 @@
 		box-shadow: 0 0 20px #1d2231;
 	}
 }
+
+@mixin btn-close() {
+	color: black;
+	border: 0.3rem solid;
+	font-size: 1rem;
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+	background-color: orangered;
+	font-weight: bold;
+	box-shadow: 0 0 0.4rem black;
+
+	&:hover {
+		background-color: black;
+		color: orangered;
+	}
+
+	&:active {
+		color: #47a992;
+		background-color: #2b2a33;
+	}
+}

@@ -11,20 +11,29 @@ export const cargarPost = () => {
 	} else {
 		cargar.forEach((element, i) => {
 			const plantilla = `
-                <div class="publications__card">
+				<div class="publications__card">
                     <div class="publications__img">
                         <img src="${element.url}" alt="img">
                     </div>
 
-                    <h3 class="publications__title">${element.titulo}</h3>
+                    <h3 class="publications__title" title="Nombre de la pelicula">${element.titulo}</h3>
 
-                    <p class="publications__text">
+                    <p class="publications__text" title="Descripcion de la pelicula">
                         ${element.descripcion}
                     </p>
 
-                    <span class="publications__date">${element.fecha}</span>
+                    <span class="publications__date" title="fecha de estreno">${element.fecha}</span>
 
                     <hr class="publications__hr">
+
+					<div class="publications__creator">
+						<span class="publications__span">
+							<span class="publications__text" title="Publicacion creada por">${element.creador}</span>
+						</span>
+						<span class="publications__time" title="fecha de creacion de la publicacion">${element.fechaCreacion}</span>
+					</div>
+
+					<hr class="publications__hr">
 
                     <div class="publications__buttons">
                         <button class="userdata__delete btn-eliminar" data-index="${i}">Eliminar</button>

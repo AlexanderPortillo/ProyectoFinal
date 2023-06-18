@@ -34,29 +34,28 @@ function mostrarPublicaciones(publicaciones) {
 		const elemento = publicaciones[i];
 
 		const plantilla = `
-            <div class="publications__card">
-                <div class="publications__img">
-                    <img src="${elemento.url}" alt="img">
-                </div>
+			<div class="publications__card">
+				<div class="publications__img">
+					<img src="${elemento.url}" alt="img">
+				</div>
 
-                <h3 class="publications__title">${elemento.titulo}</h3>
+				<h3 class="publications__title" title="Nombre de la pelicula">${elemento.titulo}</h3>
 
-                <p class="publications__text">
-                    ${elemento.descripcion}
-                </p>
+				<p class="publications__text" title="Descripcion de la pelicula">
+					${elemento.descripcion}
+				</p>
 
-                <span class="publications__date">${elemento.fecha}</span>
+				<span class="publications__date" title="fecha de estreno">${elemento.fecha}</span>
 
-                <hr class="publications__hr">
+				<hr class="publications__hr">
 
-                <div class="publications__creator">
-                    <span class="publications__span">
-                        <span class="publications__logo">logo</span>
-                        <span class="publications__text">AlexPor</span>
-                    </span>
-                    <span class="publications__time">102728</span>
-                </div>
-            </div>
+				<div class="publications__creator">
+					<span class="publications__span">
+						<span class="publications__text" title="Publicacion creada por">${elemento.creador}</span>
+					</span>
+					<span class="publications__time" title="fecha de creacion de la publicacion">${elemento.fechaCreacion}</span>
+				</div>
+			</div>
         `;
 
 		contenedor.innerHTML += plantilla;
