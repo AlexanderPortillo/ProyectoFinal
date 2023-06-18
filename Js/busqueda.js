@@ -3,59 +3,64 @@ buscar.addEventListener('click', buscarPost);
 
 function buscarPost() {
 	const buscar = document.getElementById('search');
-	const verificarPost = buscar.value;
+	const verificarPost = buscar.value.toLowerCase(); // Convertir a minúsculas para una comparación no sensible a mayúsculas y minúsculas
 
 	let elementos = JSON.parse(localStorage.getItem('post')) || [];
-	let encontrado = false;
+	let encontrados = [];
 
 	for (let i = 0; i < elementos.length; i++) {
 		const elemento = elementos[i];
 
-		if (elemento.titulo === verificarPost) {
-			mostrarPost(elemento);
-			buscar.value = '';
-			encontrado = true;
-			break;
-		}
-
-		if (!encontrado) {
-			alert('No se encontro la publicacion');
-			buscar.value = '';
+		if (elemento.titulo.toLowerCase().includes(verificarPost)) {
+			// Usar includes() para verificar si la palabra buscada está presente en el título
+			encontrados.push(elemento);
 		}
 	}
+
+	if (encontrados.length > 0) {
+		mostrarPublicaciones(encontrados);
+	} else {
+		alert('No se encontraron publicaciones');
+	}
+
+	buscar.value = '';
 }
 
-function mostrarPost(elemento) {
+function mostrarPublicaciones(publicaciones) {
 	let contenedor = document.querySelector('.publication');
 	contenedor.innerHTML = '';
 
-	const plantilla = `
-        <div class="publications__card">
-            <div class="publications__img">
-                <img src="${elemento.url}" alt="img">
+	for (let i = 0; i < publicaciones.length; i++) {
+		const elemento = publicaciones[i];
+
+		const plantilla = `
+            <div class="publications__card">
+                <div class="publications__img">
+                    <img src="${elemento.url}" alt="img">
+                </div>
+
+                <h3 class="publications__title">${elemento.titulo}</h3>
+
+                <p class="publications__text">
+                    ${elemento.descripcion}
+                </p>
+
+                <span class="publications__date">${elemento.fecha}</span>
+
+                <hr class="publications__hr">
+
+                <div class="publications__creator">
+                    <span class="publications__span">
+                        <span class="publications__logo">logo</span>
+                        <span class="publications__text">AlexPor</span>
+                    </span>
+                    <span class="publications__time">102728</span>
+                </div>
             </div>
+        `;
 
-            <h3 class="publications__title">${elemento.titulo}</h3>
-
-            <p class="publications__text">
-                ${elemento.descripcion}
-            </p>
-
-            <span class="publications__date">${elemento.fecha}</span>
-
-            <hr class="publications__hr">
-
-			<div class="publications__creator">
-				<span class="publications__span">
-					<span class="publications__logo">logo</span>
-					<span class="publications__text">AlexPor</span>
-				</span>
-				<span class="publications__time">102728</span>
-			</div>
-        </div>
-            `;
-
-	contenedor.innerHTML = plantilla;
+		contenedor.innerHTML += plantilla;
+	}
 }
 
 // export const cargarPost = () => {
