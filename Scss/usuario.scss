@@ -20,14 +20,15 @@
 }
 
 .containerBPublicaciones {
-	background-image: url('../Svg/new-layered-peaks-haikei.svg');
+	// background-image: url('../Svg/new-layered-peaks-haikei.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 100vh;
+	// height: 100vh;
 	display: flex;
 	flex-direction: column;
-	gap: 3rem;
+	gap: 1rem;
+	background-color: red;
 }
 
 .containerPublicaiones {
@@ -76,11 +77,52 @@
 	}
 }
 
+.navbar {
+	width: 100%;
+	background-color: #dbe0e5;
+	box-shadow: 0 0 10px black;
+	padding: 1.5rem;
+	position: fixed;
+
+	&__ul {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__li {
+		font-size: 1.5rem;
+	}
+
+	&__li-item {
+		color: black;
+		border-bottom: 0.2rem solid transparent;
+		transition: color 1s, border-bottom 1s, text-shadow 1s;
+
+		&:hover {
+			color: black;
+			border-bottom: 0.2rem solid orangered;
+			text-shadow: 0 0 20px orange;
+		}
+	}
+
+	&__li-item--btn {
+		@include mixins.btn-close();
+	}
+}
+
 .user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// height: 100vh;
+
 	&__search {
+		padding-top: 0.5rem;
 		width: 100%;
 		position: absolute;
-		top: 15%;
+		top: 12%;
+		background-color: #dbe0e5;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -98,7 +140,7 @@
 	&__container {
 		width: 500px;
 		background-color: #42414d;
-		padding: 0.6rem;
+		// padding: 0.6rem;
 		border-radius: 0.5rem;
 		box-shadow: 0 0 0.5rem #15273f;
 		border: 0.2rem solid transparent;
@@ -133,6 +175,15 @@
 		cursor: pointer;
 		box-shadow: 0 0 0.5rem #0071e2;
 	}
+}
+
+.publication {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 .publications {

@@ -19,14 +19,13 @@
 }
 
 .containerBPublicaciones {
-  background-image: url("../Svg/new-layered-peaks-haikei.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
+  background-color: red;
 }
 
 .containerPublicaiones {
@@ -84,10 +83,61 @@
   background-color: #2b2a33;
 }
 
+.navbar {
+  width: 100%;
+  background-color: #dbe0e5;
+  box-shadow: 0 0 10px black;
+  padding: 1.5rem;
+  position: fixed;
+}
+.navbar__ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.navbar__li {
+  font-size: 1.5rem;
+}
+.navbar__li-item {
+  color: black;
+  border-bottom: 0.2rem solid transparent;
+  transition: color 1s, border-bottom 1s, text-shadow 1s;
+}
+.navbar__li-item:hover {
+  color: black;
+  border-bottom: 0.2rem solid orangered;
+  text-shadow: 0 0 20px orange;
+}
+.navbar__li-item--btn {
+  color: black;
+  border: 0.3rem solid;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  background-color: orangered;
+  font-weight: bold;
+  box-shadow: 0 0 0.4rem black;
+}
+.navbar__li-item--btn:hover {
+  background-color: black;
+  color: orangered;
+}
+.navbar__li-item--btn:active {
+  color: #47a992;
+  background-color: #2b2a33;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .user__search {
+  padding-top: 0.5rem;
   width: 100%;
   position: absolute;
-  top: 15%;
+  top: 12%;
+  background-color: #dbe0e5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +153,6 @@
 .user__container {
   width: 500px;
   background-color: #42414d;
-  padding: 0.6rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem #15273f;
   border: 0.2rem solid transparent;
@@ -133,6 +182,15 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 0 0.5rem #0071e2;
+}
+
+.publication {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .publications {
