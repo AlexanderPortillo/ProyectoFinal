@@ -29,10 +29,10 @@ function buscarPerfil() {
 			encontrado = true;
 			break;
 		}
+	}
 
-		if (!encontrado) {
-			alert('No se encontro el elemento en el localstorage');
-		}
+	if (!encontrado) {
+		alert('No se encontró el elemento en el localstorage');
 	}
 }
 
@@ -52,7 +52,7 @@ function mostrarUsuario(elemento) {
 		</label>
 
 		<label class="user__label">
-			<h4 class="user__profile--title">Correo electronico</h4>
+			<h4 class="user__profile--title">Correo electrónico</h4>
 			<span class="user__profile--data">${elemento.correoElectronico}</span>
 		</label>
 
@@ -94,12 +94,24 @@ function actualizarPerfil(nombreUsuario) {
 		let nuevoCorreoElectronico = prompt('Ingrese el nuevo correo electrónico:');
 		if (nuevoCorreoElectronico && !expresionRegularCorreo.test(nuevoCorreoElectronico)) {
 			nuevoCorreoElectronico = prompt(
-				'El correo electrónico no es válido. Ingrese el nuevo correo electrónico:'
+			  'El correo electrónico no es válido. Ingrese el nuevo correo electrónico:'
 			);
-		}
-		if (nuevoCorreoElectronico) {
+		  }
+		  
+		  if (nuevoCorreoElectronico) {
+			const correoExistente = elementos.find(function (element) {
+			  return element.correoElectronico === nuevoCorreoElectronico;
+			});
+		  
+			if (correoExistente) {
+			  nuevoCorreoElectronico = prompt(
+				'El correo electrónico ingresado ya existe. Ingrese un nuevo correo electrónico:'
+			  );
+			}
+		  
 			elemento.correoElectronico = nuevoCorreoElectronico;
-		}
+		  }
+		  
 
 		let nuevaContraseña = prompt('Ingrese la nueva contraseña:');
 		if (nuevaContraseña && !expresionRegularContraseña.test(nuevaContraseña)) {
