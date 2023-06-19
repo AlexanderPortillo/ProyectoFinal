@@ -1,0 +1,62 @@
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Transformers%20El%20Despertar%20De%20Las%20Bestias.jpg?raw=true
+Titulo: Transformers: El despertar de las bestias.
+Descripcion: Esta sexta pelicula de la saga, hara un viaje al pasado, concretamente a los años 90, para contar los orígenes de Optimus Prime y presentar las nuevas especies Maximals, Predacons y Terrorcons.
+Fecha: 09 de junio de 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/FastX.jpg?raw=true
+Titulo: Fast X
+Descripcion: Fast X es una película de acción estadounidense secuela de F9, que actúa como la décima entrega principal y el undécimo largometraje de la exitosa franquicia Fast & Furious.
+Fecha: 19 de mayo 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/John%20Wick%204.jpg?raw=true
+Titulo: John Wick 4 
+Descripcion: John tratará de adelantarse a cada uno de los movimientos de marqués Vincent de Gramont que pretende matar a John Wick para afianzar su poder en la Orden Suprema. 
+Fecha: 24 de marzo de 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Spider-Man%20Across%20The%20Spider-Verse.jpg?raw=true
+Titulo: Spider-Man: Across The Spider-Verse
+Descripcion: Después de reunirse con Gwen Stacy, Spiderman es lanzado a través del multiverso, donde se encuentra a un equipo de gente araña encomendada con con proteger su mera existencia.
+Fecha: 02 de junio 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Guardianes%20De%20La%20Galaxia%20Vol.3.jpg?raw=true
+Titulo: Guardianes De La Galaxia Vol. 3
+Descripcion: Aunque sigue afectado por la pérdida de Gamora, Peter Quill debe reunir a su equipo para defender el universo de una nueva amenaza o, en caso de fracasar, será el final de los Guardianes.
+Fecha: 04 de mayo 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/The%20Flash.jpg?raw=true
+Titulo: The Flash
+Descripcion: The Flash es una película estadounidense de superhéroes basada en el personaje homónimo de DC Comics. Producida por DC Studios, The Disco Factory y Double Dream y distribuida por Warner Bros.
+Fecha: 16 de junio 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Barbie.jpg?raw=true
+Titulo: Barbie
+Descripcion: Después de ser expulsada de Barbieland por no ser una muñeca de aspecto perfecto, Barbie parte hacia el mundo humano para encontrar la verdadera felicidad.
+Fecha: 21 de julio 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Scream%206.jpg?raw=true
+Titulo: Scream 6
+Descripcion: Sam, Tara, Chad y Mindy, los cuatro supervivientes de la matanza de Woodsboro, abandonan el pueblo para empezar de cero en Nueva York. Sin embargo, Ghostface los seguira hasta la gran ciudad.
+Fecha: 10 de marzo 2023
+
+-----------------------------------------------------------------------
+
+Imagen: https://github.com/Jesse-Miranda/ImagenesSitioWeb/blob/main/Super%20Mario%20Bros.jpg?raw=true
+Titulo: Super Mario Bros: La película
+Descripcion: Dos hermanos plomeros, Mario y Luigi, caen por las alcantarillas y llegan a un mundo subterráneo mágico en el que deben enfrentarse al malvado Bowser para rescatar a la princesa Peach.
+Fecha: 05 de abril 2023
+
+-----------------------------------------------------------------------
