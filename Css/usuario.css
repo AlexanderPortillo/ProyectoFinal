@@ -44,6 +44,7 @@
   background-color: #dbe0e5;
   box-shadow: 0 0 10px black;
   padding: 1.5rem;
+  position: fixed;
 }
 .nav__ul {
   display: flex;
@@ -87,7 +88,6 @@
   background-color: #dbe0e5;
   box-shadow: 0 0 10px black;
   padding: 1.5rem;
-  position: fixed;
 }
 .navbar__ul {
   display: flex;
