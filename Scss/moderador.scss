@@ -444,6 +444,18 @@ form {
 }
 
 .comments-list {
+	margin-top: 2rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-style: italic;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 25px;
+
 	.approve-button,
 	.delete-button {
 		background-color: #333;
