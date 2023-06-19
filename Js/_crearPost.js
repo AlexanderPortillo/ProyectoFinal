@@ -1,6 +1,6 @@
 const formulario = document.forms['form'];
 let tiempo = 2000;
-let administrador = 'AlexPor';
+let administrador = '';
 
 export const crearPost = (e) => {
 	e.preventDefault();

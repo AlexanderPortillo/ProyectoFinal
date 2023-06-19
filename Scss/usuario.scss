@@ -201,6 +201,11 @@
 		flex-wrap: nowrap;
 	}
 
+	.comentarios__form {
+		display: flex;
+		flex-direction: column;
+	}
+
 	&--disabled {
 		display: none;
 	}

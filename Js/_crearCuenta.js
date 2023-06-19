@@ -6,7 +6,7 @@ export const crearCuenta = (e) => {
 
 	const elementos = JSON.parse(localStorage.getItem('usuario')) || [];
 	const elementosGuardados = elementos;
-	const moderador = 'AlexPor';
+	const moderador = '';
 
 	const expresionRegularUsuario =
 		/^(?!.*\s\s)(?=.*.{5,})[A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+(?: [A-Za-z0-9#"$@!*%\-_:;¿?={}¡]+)*$/;
