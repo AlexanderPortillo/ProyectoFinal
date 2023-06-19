@@ -115,13 +115,13 @@ function fechaDeCreacion() {
 	let fecha = new Date();
 
 	let opciones = {
-		dia: '2-digit',
-		mes: '2-digit',
-		año: 'numeric',
-		horas: '2-digit',
-		minutos: '2-digit',
-		segundos: '2-digit',
-		formato12: true,
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+		hour12: true,
 	};
 
 	let horaCreacion = fecha.toLocaleString('es-MX', opciones);

@@ -1,7 +1,8 @@
 const buscar = document.getElementById('user__btn-search');
 buscar.addEventListener('click', buscarPost);
 
-function buscarPost() {
+function buscarPost(e) {
+	e.preventDefault();
 	const buscar = document.getElementById('search');
 	const verificarPost = buscar.value.toLowerCase(); // Convertir a minúsculas para una comparación no sensible a mayúsculas y minúsculas
 
