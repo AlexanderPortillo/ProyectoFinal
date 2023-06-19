@@ -18,13 +18,10 @@
 }
 
 .containerBPublicaciones {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: red;
 }
 
 .containerPublicaiones {
@@ -136,7 +133,6 @@
   width: 100%;
   position: absolute;
   top: 12%;
-  background-color: #dbe0e5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,6 +216,7 @@
   display: none;
 }
 .publications__content {
+  width: 100%;
   font-size: 3rem;
   color: black;
   font-weight: bold;

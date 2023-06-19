@@ -27,8 +27,6 @@ export const iniciarSesion = (e) => {
 				} else {
 					alert('no coinciden las credenciales');
 				}
-			} else {
-				alert('El usuario no coincide');
 			}
 		});
 	}
