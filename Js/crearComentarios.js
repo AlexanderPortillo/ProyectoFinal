@@ -12,25 +12,29 @@ submitButton.addEventListener('click', function () {
 		approved: false,
 	};
 
-	// Obtener comentarios existentes del localStorage (si los hay)
-	let comments = JSON.parse(localStorage.getItem('comments')) || [];
+	if (comment.text === '') {
+		alert('error');
+	} else {
+		// Obtener comentarios existentes del localStorage (si los hay)
+		let comments = JSON.parse(localStorage.getItem('comments')) || [];
 
-	// Agregar el nuevo comentario
-	comments.push(comment);
+		// Agregar el nuevo comentario
+		comments.push(comment);
 
-	// Guardar los comentarios en el localStorage
-	localStorage.setItem('comments', JSON.stringify(comments));
+		// Guardar los comentarios en el localStorage
+		localStorage.setItem('comments', JSON.stringify(comments));
 
-	// Mostrar mensaje de confirmación dentro del botón
-	commentMessage.textContent = 'El comentario ha sido enviado.';
+		// Mostrar mensaje de confirmación dentro del botón
+		commentMessage.textContent = 'El comentario ha sido enviado.';
 
-	// Limpiar la caja de comentarios
-	document.querySelector('.comentarios__text').value = '';
+		// Limpiar la caja de comentarioss
+		document.querySelector('.comentarios__text').value = '';
 
-	// Ocultar el mensaje después de 3 segundos
-	setTimeout(function () {
-		commentMessage.textContent = '';
-	}, 3000);
+		// Ocultar el mensaje después de 3 segundos
+		setTimeout(function () {
+			commentMessage.textContent = '';
+		}, 3000);
+	}
 });
 
 // Mostrar los comentarios aprobados al cargar la página

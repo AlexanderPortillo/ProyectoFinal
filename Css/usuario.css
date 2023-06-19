@@ -212,6 +212,10 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.publications .comentarios__form {
+  display: flex;
+  flex-direction: column;
+}
 .publications--disabled {
   display: none;
 }

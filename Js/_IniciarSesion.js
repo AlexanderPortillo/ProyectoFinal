@@ -1,6 +1,6 @@
 const formulario = document.forms['form'];
-const moderador = 'AlexPor';
-const contraseña = '682725';
+const moderador = '';
+const contraseña = '';
 
 export const iniciarSesion = (e) => {
 	e.preventDefault();
